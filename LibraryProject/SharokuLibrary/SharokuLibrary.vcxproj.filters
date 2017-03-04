@@ -22,5 +22,39 @@
     <Filter Include="sl\Debug">
       <UniqueIdentifier>{e0f6701b-27e9-4777-8cbd-a6b836eb63c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Struct">
+      <UniqueIdentifier>{5c0b49e2-92d8-4bb5-aacd-254a9d8ebda3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sl\Common\slBase.h">
+      <Filter>sl\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Common\slDefine.h">
+      <Filter>sl\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Common\slTypes.h">
+      <Filter>sl\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\sl.h">
+      <Filter>sl</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\slBuild.h">
+      <Filter>sl</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Window\slIWindow.h">
+      <Filter>sl\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Window\dx11.Window\dx11.Window.h">
+      <Filter>sl\Window\dx11.Window</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sl\Window\slIWindow.cpp">
+      <Filter>sl\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Window\dx11.Window\dx11.Window.cpp">
+      <Filter>sl\Window\dx11.Window</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
