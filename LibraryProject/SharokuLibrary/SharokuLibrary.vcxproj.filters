@@ -1,17 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="sl">
+      <UniqueIdentifier>{5e5eb3a6-2b79-4525-b803-7fc3323c911b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="sl\Window">
+      <UniqueIdentifier>{611b65c9-3d26-42c0-b037-9255912861b8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="sl\GraphicsDevice">
+      <UniqueIdentifier>{b47122eb-b21a-4e6e-aa03-9971e186aaf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Common">
+      <UniqueIdentifier>{7177cc4d-36d7-46d8-a145-6912bbd9765b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Window\dx11.Window">
+      <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Input">
+      <UniqueIdentifier>{851a3e94-a49f-4858-854b-553a72a7fc27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Debug">
+      <UniqueIdentifier>{e0f6701b-27e9-4777-8cbd-a6b836eb63c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
