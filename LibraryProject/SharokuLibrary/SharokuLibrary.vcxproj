@@ -19,17 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sl\Common\slBase.h" />
     <ClInclude Include="sl\Common\slDefine.h" />
     <ClInclude Include="sl\Common\slTypes.h" />
     <ClInclude Include="sl\sl.h" />
     <ClInclude Include="sl\slBuild.h" />
-    <ClInclude Include="sl\Window\dx11.Window\dx11.Window.h" />
+    <ClInclude Include="sl\Window\dx11Window\dx11Window.h" />
     <ClInclude Include="sl\Window\slIWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sl\Window\dx11.Window\dx11.Window.cpp" />
-    <ClCompile Include="sl\Window\slIWindow.cpp" />
+    <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3AB129B-0E5A-442C-975B-196F3EF35FF3}</ProjectGuid>

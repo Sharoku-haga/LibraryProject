@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Application\Application.vcxproj", "{E784932B-57AE-4815-93CF-798CE29473FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A3AB129B-0E5A-442C-975B-196F3EF35FF3} = {A3AB129B-0E5A-442C-975B-196F3EF35FF3}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharokuLibrary", "SharokuLibrary\SharokuLibrary.vcxproj", "{A3AB129B-0E5A-442C-975B-196F3EF35FF3}"
 EndProject
