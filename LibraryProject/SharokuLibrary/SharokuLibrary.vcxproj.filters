@@ -51,6 +51,9 @@
     <ClInclude Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h">
       <Filter>sl\GraphicsDevice\dx11GraphicsDevice</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Common\slTemplate.h">
+      <Filter>sl\Common</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">

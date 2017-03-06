@@ -27,6 +27,7 @@ public:
 	/** Desutructor */
 	virtual ~IWindow() = default;
 
+	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(IWindow);
 
 	/**

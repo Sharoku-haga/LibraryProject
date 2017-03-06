@@ -24,6 +24,15 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	{
 		// 作成失敗
 	}
+	
+	sl::dx11::GraphicsDevice* pGraphicsDevice = nullptr;
+	pGraphicsDevice = new sl::dx11::GraphicsDevice();
+
+	if(!pGraphicsDevice->Initialize(pWindow->GetHwnd()))
+	{
+		// 作成失敗
+	}
+
 	while(true)
 	{
 		if(pWindow->Update())
@@ -36,6 +45,7 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 	}
 
+	delete pGraphicsDevice;
 	delete pWindow;
 	return 0;
 }

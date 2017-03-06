@@ -101,17 +101,17 @@ bool Window::Initalize(t_char*  pWinTitle, int winWidth, int winHeight, HWND hWn
 	// クライアント領域を指定したサイズに調整する
 #ifdef ADJUST_CLIENT_SIZE
 	// ウィンドウサイズとクライアントサイズを求める
-	RECT widow_rect;
-	GetWindowRect(m_hWnd, &widow_rect);
-	RECT client_rect;
-	GetClientRect(m_hWnd, &client_rect);
+	RECT widowRect;
+	GetWindowRect(m_hWnd, &widowRect);
+	RECT clientRect;
+	GetClientRect(m_hWnd, &clientRect);
 
 	// ウィンドウサイズとクライアントサイズの差からウィンドウの枠の長さを求める
-	int winFlameWidth  = static_cast<int>((widow_rect.right - widow_rect.left) - (client_rect.right - client_rect.left));
-	int winFlameHeight = static_cast<int>((widow_rect.bottom - widow_rect.top) - (client_rect.bottom -= client_rect.top));
+	int winFlameWidth  = static_cast<int>((widowRect.right - widowRect.left) - (clientRect.right - clientRect.left));
+	int winFlameHeight = static_cast<int>((widowRect.bottom - widowRect.top) - (clientRect.bottom - clientRect.top));
 
 	// ウィンドウの幅を再設定する
-	SetWindowPos(m_hWnd, HWND_TOP, 0, 0, (winWidth + winFlameWidth), (winHeight + (widow_rect.bottom - client_rect.bottom)), SWP_NOMOVE);
+	SetWindowPos(m_hWnd, HWND_TOP, 0, 0, (winWidth + winFlameWidth), (winHeight + (widowRect.bottom - clientRect.bottom)), SWP_NOMOVE);
 #endif	// ADJUST_CLIENT_SIZE
 
 	if(m_hWnd == NULL)
