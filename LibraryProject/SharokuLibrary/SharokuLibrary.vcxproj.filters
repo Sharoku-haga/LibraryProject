@@ -25,6 +25,9 @@
     <Filter Include="sl\Window\dx11Window">
       <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\GraphicsDevice\dx11GraphicsDevice">
+      <UniqueIdentifier>{0aac03c9-669f-40dd-8912-4315f7b78c2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h">
@@ -45,10 +48,16 @@
     <ClInclude Include="sl\Window\slIWindow.h">
       <Filter>sl\Window</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h">
+      <Filter>sl\GraphicsDevice\dx11GraphicsDevice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
       <Filter>sl\Window\dx11Window</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp">
+      <Filter>sl\GraphicsDevice\dx11GraphicsDevice</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
