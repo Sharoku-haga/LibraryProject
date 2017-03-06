@@ -13,9 +13,6 @@
     <Filter Include="sl\Common">
       <UniqueIdentifier>{7177cc4d-36d7-46d8-a145-6912bbd9765b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Window\dx11.Window">
-      <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sl\Input">
       <UniqueIdentifier>{851a3e94-a49f-4858-854b-553a72a7fc27}</UniqueIdentifier>
     </Filter>
@@ -25,11 +22,11 @@
     <Filter Include="sl\Struct">
       <UniqueIdentifier>{5c0b49e2-92d8-4bb5-aacd-254a9d8ebda3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Window\dx11Window">
+      <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sl\Common\slBase.h">
-      <Filter>sl\Common</Filter>
-    </ClInclude>
     <ClInclude Include="sl\Common\slDefine.h">
       <Filter>sl\Common</Filter>
     </ClInclude>
@@ -42,19 +39,16 @@
     <ClInclude Include="sl\slBuild.h">
       <Filter>sl</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Window\dx11Window\dx11Window.h">
+      <Filter>sl\Window\dx11Window</Filter>
+    </ClInclude>
     <ClInclude Include="sl\Window\slIWindow.h">
       <Filter>sl\Window</Filter>
     </ClInclude>
-    <ClInclude Include="sl\Window\dx11.Window\dx11.Window.h">
-      <Filter>sl\Window\dx11.Window</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sl\Window\slIWindow.cpp">
-      <Filter>sl\Window</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Window\dx11.Window\dx11.Window.cpp">
-      <Filter>sl\Window\dx11.Window</Filter>
+    <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
+      <Filter>sl\Window\dx11Window</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
