@@ -28,6 +28,12 @@
     <Filter Include="sl\GraphicsDevice\dx11GraphicsDevice">
       <UniqueIdentifier>{0aac03c9-669f-40dd-8912-4315f7b78c2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Shader">
+      <UniqueIdentifier>{82f69bc8-dfcb-45fe-b194-3f277d8c2fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Shader\dx11ShaderManager">
+      <UniqueIdentifier>{6c567279-36b1-4483-8c5c-67baa6ea651d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h">
@@ -54,6 +60,9 @@
     <ClInclude Include="sl\Common\slTemplate.h">
       <Filter>sl\Common</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.h">
+      <Filter>sl\Shader\dx11ShaderManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
@@ -61,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp">
       <Filter>sl\GraphicsDevice\dx11GraphicsDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.cpp">
+      <Filter>sl\Shader\dx11ShaderManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
