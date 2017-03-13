@@ -9,6 +9,9 @@
 
 /* Defines ---------------------------------------------------------------------------------------------------- */
 
+/** falseかどうかのチェックマクロ  */
+#define RESULT_FAILED(result) ((static_cast<bool>(result)) == false)
+
 /** コピー禁止マクロ */
 #ifndef SL_DISALLOW_COPY_AND_ASSIGN
 	#define SL_DISALLOW_COPY_AND_ASSIGN(...)		\

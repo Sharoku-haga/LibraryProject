@@ -14,6 +14,7 @@
 
 typedef wchar_t w_char;				// ワイド文字
 
+/** @todo 文字については改めて再検討する */
 // UNICODEの設定でないならt_charはchar型になる
 #ifdef  UNICODE
 #ifndef SL_T_CHAR_DEFINED

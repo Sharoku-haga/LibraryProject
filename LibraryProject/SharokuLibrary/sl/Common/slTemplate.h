@@ -1,17 +1,25 @@
 ﻿//==================================================================================================================================//
-//!< @file		sl.h
-//!< @brief		Sharoku Library
+//!< @file		slTemplate.h
+//!< @brief		クラス共通でつかうテンプレートをまとめたヘッダファイル
 //!< @author	T.Haga
 //==================================================================================================================================//
 
-#ifndef SL_H
-#define SL_H
+#ifndef SL_TEMPLATE_H 
+#define SL_TEMPLATE_H
 
-#include "Window\slIWindow.h"
-#include "Window\dx11Window\dx11Window.h"
-#include "Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h"
+// 試作型DirectX関連解放関数テンプレート
+template<typename T>
+void ReleaseSafely(T* variable)
+{
+	if(variable != NULL)
+	{
+		variable->Release();
+		variable = NULL;
+	}
+}
 
-#endif	// SL_H
+
+#endif	//  SL_TEMPLATE_H
 
 //==================================================================================================================================//
 // END OF FILE
