@@ -22,6 +22,8 @@ namespace dx11
 namespace
 {
 
+// シェーダーのバージョン設定
+/** @todo 2017/04/02現在はまだ5.0のみ対応仕様 */
 #ifdef SHADER_VERSION_5_0
 const LPCSTR VertexShaderVersion		= "vs_5_0";
 const LPCSTR PixelShaderVersion			= "ps_5_0";
