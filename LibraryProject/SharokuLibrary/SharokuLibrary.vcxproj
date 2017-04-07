@@ -26,12 +26,16 @@
     <ClInclude Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.h" />
     <ClInclude Include="sl\sl.h" />
     <ClInclude Include="sl\slBuild.h" />
+    <ClInclude Include="sl\Texture\dx11Texture\dx11Texture.h" />
+    <ClInclude Include="sl\Texture\dx11Texture\dx11TextureManager.h" />
     <ClInclude Include="sl\Window\dx11Window\dx11Window.h" />
     <ClInclude Include="sl\Window\slIWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp" />
     <ClCompile Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.cpp" />
+    <ClCompile Include="sl\Texture\dx11Texture\dx11Texture.cpp" />
+    <ClCompile Include="sl\Texture\dx11Texture\dx11TextureManager.cpp" />
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -34,6 +34,12 @@
     <Filter Include="sl\Shader\dx11ShaderManager">
       <UniqueIdentifier>{6c567279-36b1-4483-8c5c-67baa6ea651d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Texture">
+      <UniqueIdentifier>{14aec58d-209f-42b8-a5a8-807825f2d112}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Texture\dx11Texture">
+      <UniqueIdentifier>{3127b355-24f6-46ff-b57f-f8b2dec2cf84}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h">
@@ -63,6 +69,12 @@
     <ClInclude Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.h">
       <Filter>sl\Shader\dx11ShaderManager</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Texture\dx11Texture\dx11Texture.h">
+      <Filter>sl\Texture\dx11Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Texture\dx11Texture\dx11TextureManager.h">
+      <Filter>sl\Texture\dx11Texture</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
@@ -73,6 +85,12 @@
     </ClCompile>
     <ClCompile Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.cpp">
       <Filter>sl\Shader\dx11ShaderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Texture\dx11Texture\dx11Texture.cpp">
+      <Filter>sl\Texture\dx11Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Texture\dx11Texture\dx11TextureManager.cpp">
+      <Filter>sl\Texture\dx11Texture</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
