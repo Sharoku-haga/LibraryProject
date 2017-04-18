@@ -28,6 +28,10 @@
     <ClInclude Include="sl\slBuild.h" />
     <ClInclude Include="sl\Texture\dx11Texture\dx11Texture.h" />
     <ClInclude Include="sl\Texture\dx11Texture\dx11TextureManager.h" />
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex.h" />
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2D.h" />
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11VertexManager.h" />
+    <ClInclude Include="sl\Vertex\dx11Vertex\Vertex2DManager.h" />
     <ClInclude Include="sl\Window\dx11Window\dx11Window.h" />
     <ClInclude Include="sl\Window\slIWindow.h" />
   </ItemGroup>
@@ -36,6 +40,10 @@
     <ClCompile Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.cpp" />
     <ClCompile Include="sl\Texture\dx11Texture\dx11Texture.cpp" />
     <ClCompile Include="sl\Texture\dx11Texture\dx11TextureManager.cpp" />
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex.cpp" />
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2D.cpp" />
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11VertexManager.cpp" />
+    <ClCompile Include="sl\Vertex\dx11Vertex\Vertex2DManager.cpp" />
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
