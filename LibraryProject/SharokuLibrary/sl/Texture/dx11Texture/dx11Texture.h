@@ -19,12 +19,14 @@ class Texture
 {
 
 public:
-
 	/** Constructor */
-	Texture();
+	Texture(void);
 
 	/** Destructor */
 	~Texture(void);
+
+private:
+
 };
 
 }	// namespace dx11
