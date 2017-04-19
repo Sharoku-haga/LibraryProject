@@ -40,6 +40,12 @@
     <Filter Include="sl\Texture\dx11Texture">
       <UniqueIdentifier>{3127b355-24f6-46ff-b57f-f8b2dec2cf84}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Vertex">
+      <UniqueIdentifier>{974a1091-3440-4c00-8b58-de1485ba349f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Vertex\dx11Vertex">
+      <UniqueIdentifier>{869de06c-325a-44fa-8bac-127c5a4099ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h">
@@ -75,6 +81,18 @@
     <ClInclude Include="sl\Texture\dx11Texture\dx11TextureManager.h">
       <Filter>sl\Texture\dx11Texture</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex.h">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2D.h">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11VertexManager.h">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Vertex\dx11Vertex\Vertex2DManager.h">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
@@ -91,6 +109,18 @@
     </ClCompile>
     <ClCompile Include="sl\Texture\dx11Texture\dx11TextureManager.cpp">
       <Filter>sl\Texture\dx11Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex.cpp">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2D.cpp">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11VertexManager.cpp">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Vertex\dx11Vertex\Vertex2DManager.cpp">
+      <Filter>sl\Vertex\dx11Vertex</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
