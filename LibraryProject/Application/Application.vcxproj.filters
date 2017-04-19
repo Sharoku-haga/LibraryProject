@@ -4,10 +4,21 @@
     <Filter Include="Application">
       <UniqueIdentifier>{3253a01c-3b0f-40aa-84d0-e12e2477313d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Application\App">
+      <UniqueIdentifier>{96d3575f-0c39-4810-af22-31557098a393}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Application</Filter>
     </ClCompile>
+    <ClCompile Include="App\App.cpp">
+      <Filter>Application\App</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App\App.h">
+      <Filter>Application\App</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

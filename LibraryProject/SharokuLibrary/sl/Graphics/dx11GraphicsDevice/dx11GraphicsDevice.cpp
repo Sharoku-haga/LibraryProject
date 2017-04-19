@@ -200,7 +200,7 @@ bool GraphicsDevice::InitDXGI(HWND hWnd)
 		DXGI_SWAP_CHAIN_DESC			swapChainDesc;
 		swapChainDesc.BufferDesc.Width						= backBufferWidth;							// バックバッファの幅
 		swapChainDesc.BufferDesc.Height						= backBufferHeight;							// バックバッファの高さ
-		swapChainDesc.BufferDesc.Format						= DXGI_FORMAT_R8G8B8A8_UNORM_SRGB;			// ディスプレイフォーマット(各8ビットの符号なし整数タイプでwindows標準のsRGBの非線形カラーフォーマット)
+		swapChainDesc.BufferDesc.Format						= DXGI_FORMAT_R8G8B8A8_UNORM;				// ディスプレイフォーマット(各8ビットの符号なし整数タイプ)
 		swapChainDesc.BufferDesc.RefreshRate.Numerator		= AppFPS;									// リフレッシュ・レート(分子)
 		swapChainDesc.BufferDesc.RefreshRate.Denominator	= 1;										// リフレッシュ・レート(分母)
 		swapChainDesc.BufferDesc.ScanlineOrdering			= DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;		// スキャンライン・オーダー(走査方式の指定)。現在は指定なし。
