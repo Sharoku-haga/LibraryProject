@@ -46,6 +46,12 @@
     <Filter Include="sl\Vertex\dx11Vertex\dx11CommonHLSL">
       <UniqueIdentifier>{be6b263c-039b-43e9-be02-9058fffadb69}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Drawer">
+      <UniqueIdentifier>{ec88b267-04d4-4e2c-b98d-fd794627c665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Drawer\dx11Drawer">
+      <UniqueIdentifier>{dd889d8a-cc38-4f86-896f-78fe5d591fc3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h">
@@ -96,6 +102,9 @@
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.h">
       <Filter>sl\Vertex\dx11Vertex</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Drawer\dx11Drawer\dx11Drawer.h">
+      <Filter>sl\Drawer\dx11Drawer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
@@ -124,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.cpp">
       <Filter>sl\Vertex\dx11Vertex</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Drawer\dx11Drawer\dx11Drawer.cpp">
+      <Filter>sl\Drawer\dx11Drawer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
