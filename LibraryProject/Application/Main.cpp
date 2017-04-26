@@ -26,6 +26,9 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	sl::ISharokuLibrary* pLibrary = sl::ISharokuLibrary::Instance();
 	pLibrary->Initialize(TITLE, WIN_WIDTH, WIN_HEIGHT);
 
+	app::App* pApp = new app::App();
+	pApp->Initialize();
+
 	while(true)
 	{
 		if(pLibrary->UpdateWindow())
@@ -34,9 +37,14 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		}
 		else
 		{
+			if(pApp->Update())
+			{
+				break;
+			}
 		}
 	}
 
+	delete pApp;
 	sl::ISharokuLibrary::Delete();
 	return 0;
 }

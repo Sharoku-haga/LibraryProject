@@ -8,7 +8,11 @@
 #define SL_SHAROKU_LIBRARY_H
 
 #include <windows.h>
+#include "Common/slDefine.h"
 #include "Common/slTypes.h"
+#include "Common/slStruct.h"
+#include "Common/slVECTOR/slVECTOR2.h"
+#include "Common/slVECTOR/slVECTOR3.h"
 
 namespace sl
 {
@@ -26,11 +30,14 @@ public:
 
 	/** 
 	* インスタンス生成関数 
-	* @attention	このクラスを使用する場合は必ず最初に呼ぶこと
+	*  @attention	このクラスを使用する場合は必ず最初に呼ぶこと
 	*/
 	static void Create(void);
 
-	/** インスタンス破棄関数 */
+	/** 
+	* インスタンス破棄関数
+	* @attention	上記のCreate関数をよんだら、破棄処理として必ずこの関数をよぶこと
+	*/
 	static void Delete(void);
 
 	/**
@@ -71,6 +78,47 @@ public:
 	virtual void ChangeWindowMode(bool isFullScreen) = 0;
 
 	//-----------------------------------------------------------------//
+	// テクスチャー関連関数
+	//-----------------------------------------------------------------//
+
+	/** 
+	* 指定したパスのテクスチャーを読み込む関数 
+	* @param[in] pFileName テクスチャーのファイルネーム
+	* @return 登録したID
+	*/
+	virtual int LoadTexture(const t_char* pFileName) = 0;
+
+	/** 
+	* 指定したテクスチャーを解放する関数 
+	* @param[in] texID 解放したいテクスチャーのID
+	*/
+	virtual void ReleaseTex(int texID) = 0;
+
+	/** 現在読み込んでいるテクスチャー全てを解放する関数 */
+	virtual void ReleaseTexALL(void) = 0;
+
+	//-----------------------------------------------------------------//
+	// 頂点関連関数
+	//-----------------------------------------------------------------//
+
+	/**
+	* 2Dの頂点(4つ)バッファを生成する関数
+	* @param[in] rSize	サイズ
+	* @param[in] rUV	UV
+	* @return	登録した頂点のID
+	*/
+	virtual int CreateVertex2D(const fRect& rSize, const fRect& rUV) = 0;
+
+	/** 
+	* 指定した2D頂点バッファを解放する関数
+	* @param[in] vtxID 解放したい頂点のID
+ 	*/
+	virtual void ReleaseVertex2D(int vtxID) = 0;
+
+	/** 登録している頂点バッファ(2D頂点バッファを含む)を全て解放する関数 */
+	virtual void ReleaseVertexALL(void) = 0;
+
+	//-----------------------------------------------------------------//
 	// 描画関連関数
 	//-----------------------------------------------------------------//
 
@@ -79,6 +127,16 @@ public:
 
 	/** 描画終了処理 */
 	virtual void EndRender(void) = 0;
+
+	/** 
+	* 2D描画関数
+	* @todo とりあえず描画チェックの為実装。後で見直し
+	* @param[in] ids	登録した頂点情報IDとテクスチャーID
+	* @param[in] pos	位置座標
+	* @param[in] scale	スケール値. デフォルトは1.0f,1.0f,1.0f
+	* @param[in] angle	角度
+	*/
+	virtual void Draw2D(GraphicsIDs ids, SLVECTOR2 pos, SLVECTOR3 scale = SLVECTOR3(1.0f, 1.0f, 1.0f), float angle = 0.0f) = 0;
 
 	//-----------------------------------------------------------------//
 	// インプット関連関数
@@ -89,14 +147,19 @@ public:
 	//-----------------------------------------------------------------//
 
 	//-----------------------------------------------------------------//
-	// その他関数
+	// その他
 	//-----------------------------------------------------------------//
 
 	/** Desutructor */
 	virtual ~ISharokuLibrary(void){}
 
+protected:
+	/** Constructor */
+	ISharokuLibrary(void){}
+
 private:
 	static ISharokuLibrary*		m_pILibrary;			//!<  ISharokuLibraryクラスのインスタンスへのポインタ
+
 };
 
 }	// namespace sl

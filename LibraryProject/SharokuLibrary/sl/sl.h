@@ -7,11 +7,34 @@
 #ifndef SL_H
 #define SL_H
 
-#include "Library/Window/dx11Window/dx11Window.h"
+//==============================================================================================================//
+//!< SharokuLibrary
+//==============================================================================================================//
 
-#include "Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h"
-#include "Texture\dx11Texture\dx11TextureManager.h"
-#include "Vertex\dx11Vertex\dx11Vertex2DManager.h"
+/** Library -------------------------------------------------------------- */
+
+#include "slISharokuLibrary.h"
+
+/** Define --------------------------------------------------------------- */
+
+#include "Common/slDefine.h"
+
+/** Template ------------------------------------------------------------- */
+
+#include "Common/slTemplate.h"
+
+/** Type ----------------------------------------------------------------- */
+
+#include "Common/slTypes.h"
+
+/** Struct --------------------------------------------------------------- */
+
+#include "Common/slStruct.h"
+
+/** Vector --------------------------------------------------------------- */
+
+#include "Common/slVECTOR/slVECTOR2.h"
+#include "Common/slVECTOR/slVECTOR3.h"
 
 #endif	// SL_H
 

@@ -16,10 +16,10 @@ namespace sl
 template<typename T>
 void DeleteSafly(T* variable)
 {
-	if(variable != NULL)
+	if(variable != nullptr)
 	{
 		delete variable;
-		variable = NULL;
+		variable = nullptr;
 	}
 }
 
