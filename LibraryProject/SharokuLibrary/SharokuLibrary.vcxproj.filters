@@ -4,9 +4,6 @@
     <Filter Include="sl">
       <UniqueIdentifier>{5e5eb3a6-2b79-4525-b803-7fc3323c911b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Window">
-      <UniqueIdentifier>{611b65c9-3d26-42c0-b037-9255912861b8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sl\GraphicsDevice">
       <UniqueIdentifier>{b47122eb-b21a-4e6e-aa03-9971e186aaf8}</UniqueIdentifier>
     </Filter>
@@ -18,9 +15,6 @@
     </Filter>
     <Filter Include="sl\Debug">
       <UniqueIdentifier>{e0f6701b-27e9-4777-8cbd-a6b836eb63c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Window\dx11Window">
-      <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
     </Filter>
     <Filter Include="sl\GraphicsDevice\dx11GraphicsDevice">
       <UniqueIdentifier>{0aac03c9-669f-40dd-8912-4315f7b78c2b}</UniqueIdentifier>
@@ -46,11 +40,14 @@
     <Filter Include="sl\Vertex\dx11Vertex\dx11CommonHLSL">
       <UniqueIdentifier>{be6b263c-039b-43e9-be02-9058fffadb69}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Drawer">
-      <UniqueIdentifier>{ec88b267-04d4-4e2c-b98d-fd794627c665}</UniqueIdentifier>
+    <Filter Include="sl\Library">
+      <UniqueIdentifier>{b4a07008-3815-4c71-8bd7-668c56c031d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Drawer\dx11Drawer">
-      <UniqueIdentifier>{dd889d8a-cc38-4f86-896f-78fe5d591fc3}</UniqueIdentifier>
+    <Filter Include="sl\Library\Window">
+      <UniqueIdentifier>{611b65c9-3d26-42c0-b037-9255912861b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Window\dx11Window">
+      <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -65,12 +62,6 @@
     </ClInclude>
     <ClInclude Include="sl\slBuild.h">
       <Filter>sl</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Window\dx11Window\dx11Window.h">
-      <Filter>sl\Window\dx11Window</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Window\slIWindow.h">
-      <Filter>sl\Window</Filter>
     </ClInclude>
     <ClInclude Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h">
       <Filter>sl\GraphicsDevice\dx11GraphicsDevice</Filter>
@@ -102,14 +93,17 @@
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.h">
       <Filter>sl\Vertex\dx11Vertex</Filter>
     </ClInclude>
-    <ClInclude Include="sl\Drawer\dx11Drawer\dx11Drawer.h">
-      <Filter>sl\Drawer\dx11Drawer</Filter>
+    <ClInclude Include="sl\slISharokuLibrary.h">
+      <Filter>sl</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\slDX11Library.h">
+      <Filter>sl\Library</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Window\dx11Window\dx11Window.h">
+      <Filter>sl\Library\Window\dx11Window</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp">
-      <Filter>sl\Window\dx11Window</Filter>
-    </ClCompile>
     <ClCompile Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp">
       <Filter>sl\GraphicsDevice\dx11GraphicsDevice</Filter>
     </ClCompile>
@@ -134,8 +128,14 @@
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.cpp">
       <Filter>sl\Vertex\dx11Vertex</Filter>
     </ClCompile>
-    <ClCompile Include="sl\Drawer\dx11Drawer\dx11Drawer.cpp">
-      <Filter>sl\Drawer\dx11Drawer</Filter>
+    <ClCompile Include="sl\slISharokuLibrary.cpp">
+      <Filter>sl</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\slDX11Library.cpp">
+      <Filter>sl\Library</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Window\dx11Window\dx11Window.cpp">
+      <Filter>sl\Library\Window\dx11Window</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
