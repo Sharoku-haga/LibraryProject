@@ -23,31 +23,32 @@
     <ClInclude Include="sl\Common\slStruct.h" />
     <ClInclude Include="sl\Common\slTemplate.h" />
     <ClInclude Include="sl\Common\slTypes.h" />
-    <ClInclude Include="sl\Drawer\dx11Drawer\dx11Drawer.h" />
     <ClInclude Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h" />
+    <ClInclude Include="sl\Library\slDX11Library.h" />
+    <ClInclude Include="sl\Library\Window\dx11Window\dx11Window.h" />
     <ClInclude Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.h" />
     <ClInclude Include="sl\sl.h" />
     <ClInclude Include="sl\slBuild.h" />
+    <ClInclude Include="sl\slISharokuLibrary.h" />
     <ClInclude Include="sl\Texture\dx11Texture\dx11Texture.h" />
     <ClInclude Include="sl\Texture\dx11Texture\dx11TextureManager.h" />
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex.h" />
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2D.h" />
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11VertexManager.h" />
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.h" />
-    <ClInclude Include="sl\Window\dx11Window\dx11Window.h" />
-    <ClInclude Include="sl\Window\slIWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sl\Drawer\dx11Drawer\dx11Drawer.cpp" />
     <ClCompile Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp" />
+    <ClCompile Include="sl\Library\slDX11Library.cpp" />
+    <ClCompile Include="sl\Library\Window\dx11Window\dx11Window.cpp" />
     <ClCompile Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.cpp" />
+    <ClCompile Include="sl\slISharokuLibrary.cpp" />
     <ClCompile Include="sl\Texture\dx11Texture\dx11Texture.cpp" />
     <ClCompile Include="sl\Texture\dx11Texture\dx11TextureManager.cpp" />
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex.cpp" />
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2D.cpp" />
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11VertexManager.cpp" />
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.cpp" />
-    <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="sl\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonPS.hlsl">

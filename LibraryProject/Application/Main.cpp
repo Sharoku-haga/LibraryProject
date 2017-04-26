@@ -8,7 +8,7 @@
 
 #include <windows.h>
 #include <crtdbg.h>
-#include "sl/sl.h"
+#include "../SharokuLibrary/sl/slISharokuLibrary.h"
 #include "App\App.h"
 
 #define TITLE "テスト"
@@ -22,46 +22,22 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// メモリリーク検出
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	sl::IWindow*	pWindow = nullptr;
-	pWindow = new sl::dx11::Window();
-
-	if(!pWindow->Initialize(TITLE, WIN_WIDTH, WIN_HEIGHT))
-	{
-		// 作成失敗
-		return 0;
-	}
-	
-	sl::dx11::GraphicsDevice* pGraphicsDevice = nullptr;
-	pGraphicsDevice = new sl::dx11::GraphicsDevice();
-	if(!pGraphicsDevice->Initialize(pWindow->GetHwnd()))
-	{
-		// 作成失敗
-	}
-
-	
-	/* アプリケーションの初期化 ----------------------------------------------------------------------------------------------- */
-
-	app::App* pApp = new app::App();
-	pApp->Initialize(pGraphicsDevice);
+	sl::ISharokuLibrary::Create();
+	sl::ISharokuLibrary* pLibrary = sl::ISharokuLibrary::Instance();
+	pLibrary->Initialize(TITLE, WIN_WIDTH, WIN_HEIGHT);
 
 	while(true)
 	{
-		if(pWindow->Update())
+		if(pLibrary->UpdateWindow())
 		{
 			break;
 		}
 		else
 		{
-			if(pApp->Update())
-			{
-				break;
-			}
 		}
 	}
 
-	delete pApp;
-	delete pGraphicsDevice;
-	delete pWindow;
+	sl::ISharokuLibrary::Delete();
 	return 0;
 }
 

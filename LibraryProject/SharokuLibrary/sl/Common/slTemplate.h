@@ -9,7 +9,22 @@
 
 #include <windows.h>
 
-// 試作型DirectX関連解放関数テンプレート
+namespace sl
+{
+
+// 安全デリートテンプレート
+template<typename T>
+void DeleteSafly(T* variable)
+{
+	if(variable != NULL)
+	{
+		delete variable;
+		variable = NULL;
+	}
+}
+
+
+// DirectX関連解放関数テンプレート
 template<typename T>
 void ReleaseSafely(T* variable)
 {
@@ -20,6 +35,7 @@ void ReleaseSafely(T* variable)
 	}
 }
 
+}	// namespace sl
 
 #endif	//  SL_TEMPLATE_H
 
