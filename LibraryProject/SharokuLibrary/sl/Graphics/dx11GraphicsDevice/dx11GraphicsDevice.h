@@ -71,7 +71,12 @@ public:
 	* @return DirectX11のデバイス
 	*/
 	inline ID3D11DeviceContext*		GetDeviceContext(void) { return m_pDeviceContext; }
-	
+
+	/**
+	* 結びついているハンドルを取得する関数
+	* @return ウィンドウハンドル
+	*/
+	inline HWND	GetHWnd(void) { return m_hWnd;  }
 
 private:
 	HWND							m_hWnd;						//!< 結びついてるウィンドウのハンドル

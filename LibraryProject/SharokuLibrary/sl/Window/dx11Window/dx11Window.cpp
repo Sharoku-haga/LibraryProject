@@ -64,7 +64,7 @@ Window::~Window(void)
 	}
 }
 
-bool Window::Initalize(t_char*  pWinTitle, int winWidth, int winHeight, HWND hWndParent)
+bool Window::Initialize(t_char*  pWinTitle, int winWidth, int winHeight, HWND hWndParent)
 {
 	// ウィンドウ情報の設定
 	WNDCLASSEX  WndClass;

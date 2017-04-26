@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h" />
+    <ClInclude Include="sl\Common\slStruct.h" />
     <ClInclude Include="sl\Common\slTemplate.h" />
     <ClInclude Include="sl\Common\slTypes.h" />
     <ClInclude Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h" />
@@ -31,7 +32,7 @@
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex.h" />
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2D.h" />
     <ClInclude Include="sl\Vertex\dx11Vertex\dx11VertexManager.h" />
-    <ClInclude Include="sl\Vertex\dx11Vertex\Vertex2DManager.h" />
+    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.h" />
     <ClInclude Include="sl\Window\dx11Window\dx11Window.h" />
     <ClInclude Include="sl\Window\slIWindow.h" />
   </ItemGroup>
@@ -43,8 +44,20 @@
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex.cpp" />
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2D.cpp" />
     <ClCompile Include="sl\Vertex\dx11Vertex\dx11VertexManager.cpp" />
-    <ClCompile Include="sl\Vertex\dx11Vertex\Vertex2DManager.cpp" />
+    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.cpp" />
     <ClCompile Include="sl\Window\dx11Window\dx11Window.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="sl\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonPS.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+    </FxCompile>
+    <FxCompile Include="sl\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonVS.hlsl">
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
+    </FxCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3AB129B-0E5A-442C-975B-196F3EF35FF3}</ProjectGuid>
@@ -98,7 +111,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(DXSDK_DIR)include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)lib\x;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

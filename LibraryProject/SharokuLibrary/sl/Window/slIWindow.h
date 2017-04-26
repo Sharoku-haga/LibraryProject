@@ -38,7 +38,7 @@ public:
 	* @param[in] hWndParent 親のハンドル(デフォルト引数はnullptr)
 	* @return ウィンドウ作成が成功したかどうか true = 作成成功, false = 作成失敗
 	*/
-	virtual bool Initalize(t_char*  pWinTitle, int winWidth, int winHeight, HWND hWndParent = nullptr) = 0;
+	virtual bool Initialize(t_char*  pWinTitle, int winWidth, int winHeight, HWND hWndParent = nullptr) = 0;
 
 	/** 破棄関数 */
 	virtual void Finalize(void) = 0;

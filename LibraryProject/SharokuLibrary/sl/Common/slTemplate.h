@@ -7,6 +7,8 @@
 #ifndef SL_TEMPLATE_H 
 #define SL_TEMPLATE_H
 
+#include <windows.h>
+
 // 試作型DirectX関連解放関数テンプレート
 template<typename T>
 void ReleaseSafely(T* variable)

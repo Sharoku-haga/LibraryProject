@@ -79,8 +79,9 @@ public:
 
 private:
 	ID3D11Device*								m_pDevice;					//!< Direct3Dのデバイス
-	std::vector<ID3D11VertexShader*>			m_pVertexShaders;			//!< バーテックスシェーダーの動的配列
-	std::vector<ID3D11PixelShader*>				m_pPixelShaders;			//!< ピクセルシェーダーの動的配列
+	std::vector<ID3D11VertexShader*>			m_pVertexShaders;			//!< バーテックスシェーダー
+	std::vector<ID3D11PixelShader*>				m_pPixelShaders;			//!< ピクセルシェーダー
+	
 
 };	// class ShaderManager
 
