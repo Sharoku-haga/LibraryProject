@@ -23,6 +23,14 @@ typedef struct float_Rect
 
 }fRect;
 
+/** 描画関連のIDをまとめた構造体 */
+typedef struct Graphics_ID
+{
+	int		m_VtxID;		//!< 頂点情報のID
+	int		m_TexID;		//!< テクスチャー情報のID
+
+}GraphicsIDs;
+
 }	// namespace sl
 
 #endif	//SL_STRUCT_H

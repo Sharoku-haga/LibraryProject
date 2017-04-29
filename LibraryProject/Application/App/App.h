@@ -24,9 +24,8 @@ public:
 
 	/** 
 	* 初期化関数 
-	* @param[in] pGraphicsDevice グラフィックデバイス
 	*/
-	void Initialize(sl::dx11::GraphicsDevice* pGraphicsDevice);
+	void Initialize(void);
 
 	/** 破棄関数 */
 	void Finalize(void);
@@ -38,14 +37,9 @@ public:
 	bool Update(void);
 
 private:
-	sl::dx11::GraphicsDevice*	m_pGraphicsDevice;		//!< sl::dx11::GraphicsDeviceのインスタンスへのポインタ
-	sl::dx11::TextureManager*	m_pTextureManager;		//!< sl::dx11::TextureManagerのインスタンスへのポインタ
-	sl::dx11::Vertex2DManager*	m_pVertex2DManagaer;	//!< sl::dx11::Vertex2DManagerのインスタンスへのポインタ
+	sl::ISharokuLibrary*		m_pLibrary;				//!< ライブラリ
 	bool						m_IsEnd;				//!< 終了したかどうかのフラグ
-
-	int							m_TexID;
-	int							m_VtxID;
-
+	sl::GraphicsIDs				m_IDs;					//!< グラフィック関連ID群
 
 	/** コントロール関数 */
 	void Control(void);

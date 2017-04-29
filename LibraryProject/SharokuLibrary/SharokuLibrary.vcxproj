@@ -23,40 +23,42 @@
     <ClInclude Include="sl\Common\slStruct.h" />
     <ClInclude Include="sl\Common\slTemplate.h" />
     <ClInclude Include="sl\Common\slTypes.h" />
-    <ClInclude Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h" />
+    <ClInclude Include="sl\Common\slVECTOR\slVECTOR2.h" />
+    <ClInclude Include="sl\Common\slVECTOR\slVECTOR3.h" />
+    <ClInclude Include="sl\Library\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h" />
+    <ClInclude Include="sl\Library\Shader\dx11ShaderManager\dx11ShaderManager.h" />
     <ClInclude Include="sl\Library\slDX11Library.h" />
+    <ClInclude Include="sl\Library\Texture\dx11Texture\dx11TextureManager.h" />
+    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11Vertex.h" />
+    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2D.h" />
+    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2DManager.h" />
+    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11VertexManager.h" />
     <ClInclude Include="sl\Library\Window\dx11Window\dx11Window.h" />
-    <ClInclude Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.h" />
     <ClInclude Include="sl\sl.h" />
     <ClInclude Include="sl\slBuild.h" />
     <ClInclude Include="sl\slISharokuLibrary.h" />
-    <ClInclude Include="sl\Texture\dx11Texture\dx11Texture.h" />
-    <ClInclude Include="sl\Texture\dx11Texture\dx11TextureManager.h" />
-    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex.h" />
-    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2D.h" />
-    <ClInclude Include="sl\Vertex\dx11Vertex\dx11VertexManager.h" />
-    <ClInclude Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="sl\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp" />
+    <ClCompile Include="sl\Common\slVECTOR\slVECTOR2.cpp" />
+    <ClCompile Include="sl\Common\slVECTOR\slVECTOR3.cpp" />
+    <ClCompile Include="sl\Library\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp" />
+    <ClCompile Include="sl\Library\Shader\dx11ShaderManager\dx11ShaderManager.cpp" />
     <ClCompile Include="sl\Library\slDX11Library.cpp" />
+    <ClCompile Include="sl\Library\Texture\dx11Texture\dx11TextureManager.cpp" />
+    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11Vertex.cpp" />
+    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2D.cpp" />
+    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2DManager.cpp" />
+    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11VertexManager.cpp" />
     <ClCompile Include="sl\Library\Window\dx11Window\dx11Window.cpp" />
-    <ClCompile Include="sl\Shader\dx11ShaderManager\dx11ShaderManager.cpp" />
     <ClCompile Include="sl\slISharokuLibrary.cpp" />
-    <ClCompile Include="sl\Texture\dx11Texture\dx11Texture.cpp" />
-    <ClCompile Include="sl\Texture\dx11Texture\dx11TextureManager.cpp" />
-    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex.cpp" />
-    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2D.cpp" />
-    <ClCompile Include="sl\Vertex\dx11Vertex\dx11VertexManager.cpp" />
-    <ClCompile Include="sl\Vertex\dx11Vertex\dx11Vertex2DManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="sl\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonPS.hlsl">
+    <FxCompile Include="sl\Library\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonPS.hlsl">
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
     </FxCompile>
-    <FxCompile Include="sl\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonVS.hlsl">
+    <FxCompile Include="sl\Library\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonVS.hlsl">
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VS</EntryPointName>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.0</ShaderModel>
