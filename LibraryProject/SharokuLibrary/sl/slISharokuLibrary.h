@@ -13,6 +13,7 @@
 #include "Common/slStruct.h"
 #include "Common/slVECTOR/slVECTOR2.h"
 #include "Common/slVECTOR/slVECTOR3.h"
+#include "Common/slInputEnum.h"
 
 namespace sl
 {
@@ -139,8 +140,41 @@ public:
 	virtual void Draw2D(GraphicsIDs ids, SLVECTOR2 pos, SLVECTOR3 scale = SLVECTOR3(1.0f, 1.0f, 1.0f), float angle = 0.0f) = 0;
 
 	//-----------------------------------------------------------------//
-	// インプット関連関数
+	// インプットデバイス関連関数
 	//-----------------------------------------------------------------//
+
+	/** インプットデバイス更新関数 */
+	virtual void UpdateInputDevice(void) = 0;
+
+	/** 
+	* キーの状態をチェックする関数 
+	* @param[in] keyID キーのID slInputEnum.hのKEY_TYPE
+	* @return	キーの状態
+	*/
+	virtual DEVICE_STATE CheckKey(int keyID) = 0;
+
+	/** 
+	* ゲームパッドの状態をチェックする関数 
+	* @param[in] padPartID	チェックしたいパッドのアクションID. XIGAMEPAD_ACTION_ID参照
+	* @param[in] padNum		チェックしたいゲームパッドの番号.デフォルトは0
+	* @return 状態
+	*/
+	virtual DEVICE_STATE CheckGamePad(int actionID, int  padNum = 0) = 0;
+
+	/** 
+	* ボタンなどを指定したIDで登録する関数 
+	* @param[in] ID			登録したいID
+	* @param[in] device		デバイスタイプ
+	* @param[in] inputType	登録したいインプットタイプ	
+	*/
+	virtual void RegisterCustomizeType(int ID, HID_TYPE device, int inputType) = 0;
+
+	/** 
+	* カスタマイズしたボタンなどをチェックする関数
+	* @param[in] ID			登録したID
+	* @param[in] deviceNum	チェックしたいデバイス番号.デフォルトは0
+	*/
+	virtual DEVICE_STATE CheckCustomizeState(int ID, int deviceNum = 0) = 0;
 
 	//-----------------------------------------------------------------//
 	// 音関連関数

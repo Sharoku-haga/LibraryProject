@@ -20,12 +20,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h" />
+    <ClInclude Include="sl\Common\slInputEnum.h" />
     <ClInclude Include="sl\Common\slStruct.h" />
     <ClInclude Include="sl\Common\slTemplate.h" />
     <ClInclude Include="sl\Common\slTypes.h" />
     <ClInclude Include="sl\Common\slVECTOR\slVECTOR2.h" />
     <ClInclude Include="sl\Common\slVECTOR\slVECTOR3.h" />
     <ClInclude Include="sl\Library\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h" />
+    <ClInclude Include="sl\Library\Input\DirectInput\diGamePad.h" />
+    <ClInclude Include="sl\Library\Input\DirectInput\diInputManager.h" />
+    <ClInclude Include="sl\Library\Input\DirectInput\diKeyDevice.h" />
+    <ClInclude Include="sl\Library\Input\slCustomizeInputManager.h" />
+    <ClInclude Include="sl\Library\Input\XInput\xiGamePad.h" />
     <ClInclude Include="sl\Library\Shader\dx11ShaderManager\dx11ShaderManager.h" />
     <ClInclude Include="sl\Library\slDX11Library.h" />
     <ClInclude Include="sl\Library\Texture\dx11Texture\dx11TextureManager.h" />
@@ -42,6 +48,11 @@
     <ClCompile Include="sl\Common\slVECTOR\slVECTOR2.cpp" />
     <ClCompile Include="sl\Common\slVECTOR\slVECTOR3.cpp" />
     <ClCompile Include="sl\Library\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp" />
+    <ClCompile Include="sl\Library\Input\DirectInput\diGamePad.cpp" />
+    <ClCompile Include="sl\Library\Input\DirectInput\diInputManager.cpp" />
+    <ClCompile Include="sl\Library\Input\DirectInput\diKeyDevice.cpp" />
+    <ClCompile Include="sl\Library\Input\slCustomizeInputManager.cpp" />
+    <ClCompile Include="sl\Library\Input\XInput\xiGamePad.cpp" />
     <ClCompile Include="sl\Library\Shader\dx11ShaderManager\dx11ShaderManager.cpp" />
     <ClCompile Include="sl\Library\slDX11Library.cpp" />
     <ClCompile Include="sl\Library\Texture\dx11Texture\dx11TextureManager.cpp" />

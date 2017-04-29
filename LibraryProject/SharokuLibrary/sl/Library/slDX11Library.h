@@ -1,6 +1,6 @@
 ﻿//==================================================================================================================================//
 //!< @file		slDX11Library.h
-//!< @brief		slDX11Libraryクラスヘッダ
+//!< @brief		sl::DX11Libraryクラスヘッダ
 //!< @author	T.Haga
 //==================================================================================================================================//
 
@@ -8,9 +8,12 @@
 #define SL_DX11_LIBRARY_H
 
 #include "../slISharokuLibrary.h"
+#include "../Common/slInputEnum.h"
 
 namespace sl
 {
+
+class CustomizeInputManager;
 
 namespace dx11
 {
@@ -21,6 +24,20 @@ class TextureManager;
 class Vertex2DManager;
 
 }	// namespace dx11
+
+namespace di
+{
+
+class InputManager;
+
+}	// namespace di
+
+namespace xi
+{
+
+class GamePad;
+
+}	// namespace di
 
 //======================================================================//
 //!< DirectX11のライブラリのFacadeクラス
@@ -35,6 +52,8 @@ public:
 
 	/** Destructor */
 	virtual ~DX11Library(void);
+
+	SL_DISALLOW_COPY_AND_ASSIGN(DX11Library);
 
 	//-----------------------------------------------------------------//
 	// 初期化&破棄関連関数
@@ -128,6 +147,42 @@ public:
 	*/
 	virtual void Draw2D(GraphicsIDs ids, SLVECTOR2 pos, SLVECTOR3 scale = SLVECTOR3(1.0f, 1.0f, 1.0f), float angle = 0.0f)override;
 
+	//-----------------------------------------------------------------//
+	// インプットデバイス関連関数
+	//-----------------------------------------------------------------//
+
+	/** インプットデバイス更新関数 */
+	virtual void UpdateInputDevice(void)override;
+
+	/** 
+	* キーの状態をチェックする関数 
+	* @param[in] keyID キーのID slInputEnum.hのKEY_TYPE
+	* @return	キーの状態
+	*/
+	virtual DEVICE_STATE CheckKey(int keyID)override;
+
+	/** 
+	* ゲームパッドの状態をチェックする関数 
+	* @param[in] padPartID	チェックしたいパッドのアクションID. XIGAMEPAD_ACTION_ID参照
+	* @param[in] padNum		チェックしたいゲームパッドの番号.デフォルトは0
+	* @return 状態
+	*/
+	virtual DEVICE_STATE CheckGamePad(int actionID, int  padNum = 0)override;
+
+	/** 
+	* ボタンなどを指定したIDで登録する関数 
+	* @param[in] ID			登録したいID
+	* @param[in] device		デバイスタイプ
+	* @param[in] inputType	登録したいインプットタイプ	
+	*/
+	virtual void RegisterCustomizeType(int ID, HID_TYPE device, int inputType)override;
+
+	/** 
+	* カスタマイズしたボタンなどをチェックする関数
+	* @param[in] ID 登録したID
+	* @param[in] deviceNum	チェックしたいデバイス番号.デフォルトは0
+	*/
+	virtual DEVICE_STATE CheckCustomizeState(int ID, int deviceNum = 0)override;
 
 	//-----------------------------------------------------------------//
 	// その他
@@ -139,6 +194,9 @@ private:
 	dx11::GraphicsDevice*		m_pGraphicsDevice;
 	dx11::TextureManager*		m_pTextureManager;
 	dx11::Vertex2DManager*		m_pVertex2DManager;
+	di::InputManager*			m_pInputManager;
+	xi::GamePad*				m_pGamePad;
+	CustomizeInputManager*		m_pCustomizeInputManager;
 
 };
 

@@ -37,9 +37,20 @@ public:
 	bool Update(void);
 
 private:
+
+	enum CONTROLLER_BTN
+	{
+		ATTACK,
+		JUMP,
+		UP,
+		DOWN,
+		RIGHT,
+		LEFT
+	};
 	sl::ISharokuLibrary*		m_pLibrary;				//!< ライブラリ
 	bool						m_IsEnd;				//!< 終了したかどうかのフラグ
 	sl::GraphicsIDs				m_IDs;					//!< グラフィック関連ID群
+	sl::SLVECTOR2				m_Pos;					//!< 座標確認
 
 	/** コントロール関数 */
 	void Control(void);
