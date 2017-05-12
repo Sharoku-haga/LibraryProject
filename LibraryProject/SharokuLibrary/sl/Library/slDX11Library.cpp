@@ -11,7 +11,11 @@
 #include "Graphics/dx11GraphicsDevice/dx11GraphicsDevice.h"
 #include "Texture/dx11Texture/dx11TextureManager.h"
 #include "Vertex/dx11Vertex/dx11Vertex2DManager.h"
+#include "Input/DirectInput/diInputManager.h"
+#include "Input/XInput/xiGamePad.h"
+#include "Input\slCustomizeInputManager.h"
 #include "../Common/slTemplate.h"
+#include "../slBuild.h"
 
 /* Namespace -------------------------------------------------------------------------------------------------- */
 
@@ -25,6 +29,9 @@ DX11Library::DX11Library(void)
 	, m_pGraphicsDevice(nullptr)
 	, m_pTextureManager(nullptr)
 	, m_pVertex2DManager(nullptr)
+	, m_pInputManager(nullptr)
+	, m_pGamePad(nullptr)
+	, m_pCustomizeInputManager(nullptr)
 {}
 
 DX11Library::~DX11Library(void)
@@ -44,14 +51,30 @@ void DX11Library::Initialize(t_char*  pWinTitle, int winWidth, int winHeight)
 
 	m_pVertex2DManager = new dx11::Vertex2DManager();
 	m_pVertex2DManager->Initialize(m_pGraphicsDevice);
+
+	m_pInputManager = new di::InputManager();
+	m_pInputManager->Initialize(m_pWindow->GetHwnd());
+
+#ifdef USING_XI_GAMEPAD
+	m_pGamePad = new xi::GamePad();
+#endif
+
+	m_pCustomizeInputManager = new CustomizeInputManager(m_pInputManager, m_pGamePad);
+
 }
 
 void DX11Library::Finalize(void)
 {
-	DeleteSafly(m_pVertex2DManager);
-	DeleteSafly(m_pTextureManager);
-	DeleteSafly(m_pGraphicsDevice);
-	DeleteSafly(m_pWindow);
+
+	DeleteSafely(m_pCustomizeInputManager);
+#ifdef USING_XI_GAMEPAD
+	DeleteSafely(m_pGamePad);
+#endif
+	DeleteSafely(m_pInputManager);
+	DeleteSafely(m_pVertex2DManager);
+	DeleteSafely(m_pTextureManager);
+	DeleteSafely(m_pGraphicsDevice);
+	DeleteSafely(m_pWindow);
 }
 
 bool DX11Library::UpdateWindow(void)
@@ -115,6 +138,46 @@ void DX11Library::Draw2D(GraphicsIDs ids, SLVECTOR2 pos, SLVECTOR3 scale, float 
 	ID3D11Buffer* pVertexBuffer = m_pVertex2DManager->GetBuffer(ids.m_VtxID);
 	m_pGraphicsDevice->GetDeviceContext()->IASetVertexBuffers(0, 1, &pVertexBuffer, &stride, &offset);
 	m_pGraphicsDevice->GetDeviceContext()->Draw(m_pVertex2DManager->GetVertexCount(), 0);
+}
+
+void DX11Library::UpdateInputDevice(void)
+{
+	m_pInputManager->Update();
+
+#ifdef USING_XI_GAMEPAD
+	m_pGamePad->Update();
+#endif
+}
+
+DEVICE_STATE DX11Library::CheckKey(int keyID)
+{
+	return m_pInputManager->CheckKey(keyID);
+}
+
+DEVICE_STATE DX11Library::CheckGamePad(int actionID, int  padNum)
+{
+#ifdef USING_DI_GAMEPAD
+	// DirectInputの処理をここに入れる
+#else 
+
+#ifdef USING_XI_GAMEPAD
+	
+	return m_pGamePad->CheckState(actionID, padNum);
+
+#endif	// USING_XI_GAMEPAD
+#endif	//  USING_DI_GAMEPAD
+
+}
+
+void DX11Library::RegisterCustomizeType(int ID, HID_TYPE device, int inputType)
+{
+	m_pCustomizeInputManager->RegisterCustomizeType(ID, device, inputType);
+}
+
+
+DEVICE_STATE DX11Library::CheckCustomizeState(int ID, int deviceNum)
+{
+	return m_pCustomizeInputManager->CheckState(ID, deviceNum);
 }
 
 }	// namespace sl

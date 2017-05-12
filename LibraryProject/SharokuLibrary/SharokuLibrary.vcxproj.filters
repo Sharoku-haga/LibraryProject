@@ -49,6 +49,12 @@
     <Filter Include="sl\Common\slVECTOR">
       <UniqueIdentifier>{78e9353f-3f00-4aa3-b734-b3520fe92a8e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Input\DirectInput">
+      <UniqueIdentifier>{8e68132b-8194-4e25-b3a8-b6abce70698f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Input\XInput">
+      <UniqueIdentifier>{9223dbbe-3787-4a7e-94fe-99e10bf7be9b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\Common\slDefine.h">
@@ -105,6 +111,24 @@
     <ClInclude Include="sl\Common\slVECTOR\slVECTOR3.h">
       <Filter>sl\Common\slVECTOR</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Input\DirectInput\diInputManager.h">
+      <Filter>sl\Library\Input\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Input\DirectInput\diGamePad.h">
+      <Filter>sl\Library\Input\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Input\DirectInput\diKeyDevice.h">
+      <Filter>sl\Library\Input\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Common\slInputEnum.h">
+      <Filter>sl\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Input\XInput\xiGamePad.h">
+      <Filter>sl\Library\Input\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Input\slCustomizeInputManager.h">
+      <Filter>sl\Library\Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\slISharokuLibrary.cpp">
@@ -142,6 +166,21 @@
     </ClCompile>
     <ClCompile Include="sl\Common\slVECTOR\slVECTOR3.cpp">
       <Filter>sl\Common\slVECTOR</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Input\DirectInput\diInputManager.cpp">
+      <Filter>sl\Library\Input\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Input\DirectInput\diGamePad.cpp">
+      <Filter>sl\Library\Input\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Input\DirectInput\diKeyDevice.cpp">
+      <Filter>sl\Library\Input\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Input\XInput\xiGamePad.cpp">
+      <Filter>sl\Library\Input\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Input\slCustomizeInputManager.cpp">
+      <Filter>sl\Library\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
