@@ -19,6 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sl\Library\Common\slDefine.h" />
+    <ClInclude Include="sl\Library\Common\slTypes.h" />
+    <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
+    <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
+    <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slDefaultLifeTime.h" />
+    <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slPhoenixSingleton.h" />
+    <ClInclude Include="sl\Library\Singleton\slBasicSingleton.h" />
+    <ClInclude Include="sl\Library\Singleton\slUserManualSingleton.h" />
     <ClInclude Include="sl\sl.h" />
     <ClInclude Include="sl\slBuild.h" />
   </ItemGroup>
