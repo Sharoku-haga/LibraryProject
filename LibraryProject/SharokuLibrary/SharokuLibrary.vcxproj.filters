@@ -4,191 +4,19 @@
     <Filter Include="sl">
       <UniqueIdentifier>{5e5eb3a6-2b79-4525-b803-7fc3323c911b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Common">
-      <UniqueIdentifier>{7177cc4d-36d7-46d8-a145-6912bbd9765b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sl\Library">
       <UniqueIdentifier>{b4a07008-3815-4c71-8bd7-668c56c031d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Library\Window">
-      <UniqueIdentifier>{611b65c9-3d26-42c0-b037-9255912861b8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Window\dx11Window">
-      <UniqueIdentifier>{b4624bb7-bc2c-44c8-84d5-2910a2672055}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\GraphicsDevice">
-      <UniqueIdentifier>{b47122eb-b21a-4e6e-aa03-9971e186aaf8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\GraphicsDevice\dx11GraphicsDevice">
-      <UniqueIdentifier>{0aac03c9-669f-40dd-8912-4315f7b78c2b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Input">
-      <UniqueIdentifier>{851a3e94-a49f-4858-854b-553a72a7fc27}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Vertex">
-      <UniqueIdentifier>{974a1091-3440-4c00-8b58-de1485ba349f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Vertex\dx11Vertex">
-      <UniqueIdentifier>{869de06c-325a-44fa-8bac-127c5a4099ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Vertex\dx11Vertex\dx11CommonHLSL">
-      <UniqueIdentifier>{be6b263c-039b-43e9-be02-9058fffadb69}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Texture">
-      <UniqueIdentifier>{14aec58d-209f-42b8-a5a8-807825f2d112}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Texture\dx11Texture">
-      <UniqueIdentifier>{3127b355-24f6-46ff-b57f-f8b2dec2cf84}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Shader">
-      <UniqueIdentifier>{82f69bc8-dfcb-45fe-b194-3f277d8c2fd2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Shader\dx11ShaderManager">
-      <UniqueIdentifier>{6c567279-36b1-4483-8c5c-67baa6ea651d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Common\slVECTOR">
-      <UniqueIdentifier>{78e9353f-3f00-4aa3-b734-b3520fe92a8e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Input\DirectInput">
-      <UniqueIdentifier>{8e68132b-8194-4e25-b3a8-b6abce70698f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="sl\Library\Input\XInput">
-      <UniqueIdentifier>{9223dbbe-3787-4a7e-94fe-99e10bf7be9b}</UniqueIdentifier>
+    <Filter Include="sl\Library\Common">
+      <UniqueIdentifier>{080145f4-6106-4585-aadb-68e5e125d93d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sl\Common\slDefine.h">
-      <Filter>sl\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Common\slTypes.h">
-      <Filter>sl\Common</Filter>
-    </ClInclude>
     <ClInclude Include="sl\sl.h">
       <Filter>sl</Filter>
     </ClInclude>
     <ClInclude Include="sl\slBuild.h">
       <Filter>sl</Filter>
     </ClInclude>
-    <ClInclude Include="sl\Common\slTemplate.h">
-      <Filter>sl\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Common\slStruct.h">
-      <Filter>sl\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\slISharokuLibrary.h">
-      <Filter>sl</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\slDX11Library.h">
-      <Filter>sl\Library</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Window\dx11Window\dx11Window.h">
-      <Filter>sl\Library\Window\dx11Window</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.h">
-      <Filter>sl\Library\GraphicsDevice\dx11GraphicsDevice</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11Vertex.h">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2D.h">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2DManager.h">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Vertex\dx11Vertex\dx11VertexManager.h">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Texture\dx11Texture\dx11TextureManager.h">
-      <Filter>sl\Library\Texture\dx11Texture</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Shader\dx11ShaderManager\dx11ShaderManager.h">
-      <Filter>sl\Library\Shader\dx11ShaderManager</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Common\slVECTOR\slVECTOR2.h">
-      <Filter>sl\Common\slVECTOR</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Common\slVECTOR\slVECTOR3.h">
-      <Filter>sl\Common\slVECTOR</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Input\DirectInput\diInputManager.h">
-      <Filter>sl\Library\Input\DirectInput</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Input\DirectInput\diGamePad.h">
-      <Filter>sl\Library\Input\DirectInput</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Input\DirectInput\diKeyDevice.h">
-      <Filter>sl\Library\Input\DirectInput</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Common\slInputEnum.h">
-      <Filter>sl\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Input\XInput\xiGamePad.h">
-      <Filter>sl\Library\Input\XInput</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Input\slCustomizeInputManager.h">
-      <Filter>sl\Library\Input</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="sl\slISharokuLibrary.cpp">
-      <Filter>sl</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\slDX11Library.cpp">
-      <Filter>sl\Library</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Window\dx11Window\dx11Window.cpp">
-      <Filter>sl\Library\Window\dx11Window</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Graphics\dx11GraphicsDevice\dx11GraphicsDevice.cpp">
-      <Filter>sl\Library\GraphicsDevice\dx11GraphicsDevice</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11Vertex.cpp">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2D.cpp">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11Vertex2DManager.cpp">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Vertex\dx11Vertex\dx11VertexManager.cpp">
-      <Filter>sl\Library\Vertex\dx11Vertex</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Texture\dx11Texture\dx11TextureManager.cpp">
-      <Filter>sl\Library\Texture\dx11Texture</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Shader\dx11ShaderManager\dx11ShaderManager.cpp">
-      <Filter>sl\Library\Shader\dx11ShaderManager</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Common\slVECTOR\slVECTOR2.cpp">
-      <Filter>sl\Common\slVECTOR</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Common\slVECTOR\slVECTOR3.cpp">
-      <Filter>sl\Common\slVECTOR</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Input\DirectInput\diInputManager.cpp">
-      <Filter>sl\Library\Input\DirectInput</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Input\DirectInput\diGamePad.cpp">
-      <Filter>sl\Library\Input\DirectInput</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Input\DirectInput\diKeyDevice.cpp">
-      <Filter>sl\Library\Input\DirectInput</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Input\XInput\xiGamePad.cpp">
-      <Filter>sl\Library\Input\XInput</Filter>
-    </ClCompile>
-    <ClCompile Include="sl\Library\Input\slCustomizeInputManager.cpp">
-      <Filter>sl\Library\Input</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="sl\Library\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonPS.hlsl">
-      <Filter>sl\Library\Vertex\dx11Vertex\dx11CommonHLSL</Filter>
-    </FxCompile>
-    <FxCompile Include="sl\Library\Vertex\dx11Vertex\dx11CommonHLSL\dx11CommonVS.hlsl">
-      <Filter>sl\Library\Vertex\dx11Vertex\dx11CommonHLSL</Filter>
-    </FxCompile>
   </ItemGroup>
 </Project>
