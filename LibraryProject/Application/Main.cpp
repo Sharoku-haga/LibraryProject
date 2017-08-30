@@ -4,17 +4,9 @@
 //!< @author	T.Haga
 //==================================================================================================================================//
 
-/** @todo このソースはもう少しLibraryができてからきれいにする */
-
 #include <windows.h>
 #include <crtdbg.h>
-#include "../SharokuLibrary/sl/slISharokuLibrary.h"
-#include "App\App.h"
-
-#define TITLE "テスト"
-#define WIN_WIDTH	1200
-#define WIN_HEIGHT	900
-
+#include "App/App.h"
 /* Entry Point ---------------------------------------------------------------------------------------- */
 
 INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, INT nCmdShow)
@@ -22,30 +14,10 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	// メモリリーク検出
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 
-	sl::ISharokuLibrary::Create();
-	sl::ISharokuLibrary* pLibrary = sl::ISharokuLibrary::Instance();
-	pLibrary->Initialize(TITLE, WIN_WIDTH, WIN_HEIGHT);
-
 	app::App* pApp = new app::App();
 	pApp->Initialize();
-
-	while(true)
-	{
-		if(pLibrary->UpdateWindow())
-		{
-			break;
-		}
-		else
-		{
-			if(pApp->Update())
-			{
-				break;
-			}
-		}
-	}
-
+	pApp->Update();
 	delete pApp;
-	sl::ISharokuLibrary::Delete();
 	return 0;
 }
 
