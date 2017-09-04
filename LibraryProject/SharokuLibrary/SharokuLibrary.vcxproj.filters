@@ -10,6 +10,15 @@
     <Filter Include="sl\Library\Common">
       <UniqueIdentifier>{080145f4-6106-4585-aadb-68e5e125d93d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Singleton">
+      <UniqueIdentifier>{70862028-3381-4df2-9e0d-409fb2b91075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Singleton\CreationPolicy">
+      <UniqueIdentifier>{75cd080e-3600-4a44-8ff2-153b6e049a8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Singleton\LifeTimePolicy">
+      <UniqueIdentifier>{d59c32d4-5682-454a-a30b-90bd0e9f8f3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -17,6 +26,30 @@
     </ClInclude>
     <ClInclude Include="sl\slBuild.h">
       <Filter>sl</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Common\slDefine.h">
+      <Filter>sl\Library\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Common\slTypes.h">
+      <Filter>sl\Library\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Singleton\slBasicSingleton.h">
+      <Filter>sl\Library\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slDefaultLifeTime.h">
+      <Filter>sl\Library\Singleton\LifeTimePolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Singleton\slUserManualSingleton.h">
+      <Filter>sl\Library\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h">
+      <Filter>sl\Library\Singleton\CreationPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h">
+      <Filter>sl\Library\Singleton\CreationPolicy</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slPhoenixSingleton.h">
+      <Filter>sl\Library\Singleton\LifeTimePolicy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

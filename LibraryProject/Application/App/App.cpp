@@ -28,7 +28,9 @@ void App::Finalize()
 {}
 
 bool App::Update()
-{}
+{
+	return false;
+}
 
 }	// namespace app
 
