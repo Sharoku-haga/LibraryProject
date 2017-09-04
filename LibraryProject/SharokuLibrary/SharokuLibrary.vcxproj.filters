@@ -19,6 +19,27 @@
     <Filter Include="sl\Library\Singleton\LifeTimePolicy">
       <UniqueIdentifier>{d59c32d4-5682-454a-a30b-90bd0e9f8f3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Window">
+      <UniqueIdentifier>{46171831-fd15-4e0c-9c6b-f49f035f80ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Window\IWindow">
+      <UniqueIdentifier>{fd9c2b95-7320-4876-8dac-9a99927b4515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Window\IWindow\DXWindow">
+      <UniqueIdentifier>{7f9033dc-3a30-4912-97a3-50bddd8d4e31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\SmartPointer">
+      <UniqueIdentifier>{08cb99e7-b02d-4f2e-a337-921900b301f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\SmartPointer\UniquePtr">
+      <UniqueIdentifier>{3a4826ba-8ba4-4284-ace2-817fc33a622e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\SmartPointer\SharedPtr">
+      <UniqueIdentifier>{6203edbc-ee31-467e-ae97-ce1891198db6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\SmartPointer\WeakPtr">
+      <UniqueIdentifier>{b4c79877-dbfc-4301-8763-1c81c32ec133}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -51,5 +72,49 @@
     <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slPhoenixSingleton.h">
       <Filter>sl\Library\Singleton\LifeTimePolicy</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Window\slWindowDeclaration.h">
+      <Filter>sl\Library\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Common\slRect.h">
+      <Filter>sl\Library\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.h">
+      <Filter>sl\Library\Window\IWindow\DXWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Window\IWindow\slIWindow.h">
+      <Filter>sl\Library\Window\IWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.h">
+      <Filter>sl\Library\Window\IWindow\DXWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Window\IWindow\slCreateIWindowFunc.h">
+      <Filter>sl\Library\Window\IWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Window\slWindow.h">
+      <Filter>sl\Library\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\slSmartPointer.h">
+      <Filter>sl\Library\SmartPointer</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr.h">
+      <Filter>sl\Library\SmartPointer\UniquePtr</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\SharedPtr\slSharedPtr.h">
+      <Filter>sl\Library\SmartPointer\SharedPtr</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr.h">
+      <Filter>sl\Library\SmartPointer\WeakPtr</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
+      <Filter>sl\Library\Window\IWindow\DXWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp">
+      <Filter>sl\Library\Window\IWindow\DXWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Window\IWindow\slCreateIWindowFunc.cpp">
+      <Filter>sl\Library\Window\IWindow</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

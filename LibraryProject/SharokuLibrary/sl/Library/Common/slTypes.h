@@ -8,14 +8,21 @@
 #ifndef SL_TYPES_H
 #define SL_TYPES_H
 
-#include <memory>
-
 namespace sl
 {
 
-/** @todo ここのスマートポインタの型定義は自作のスマートポインタ作成しだい変更 */
-template<class T>
-using UniquePtr =  std::unique_ptr<T>;
+/** char型の型定義 */
+#ifdef  UNICODE
+#ifndef SL_T_CHAR_DEFINED
+typedef w_char t_char;
+#define SL_T_CHAR_DEFINED
+#endif	// SL_DEFINE_H
+#else 
+#ifndef SL_T_CHAR_DEFINED
+typedef char t_char;
+#define SL_T_CHAR_DEFINED
+#endif  // SL_T_CHAR_DEFINED
+#endif	// UNICODE
 
 }	// namespace sl
 

@@ -8,10 +8,17 @@
 #ifndef SL_DEFINE_H
 #define SL_DEFINE_H
 
+#include "../../slBuild.h"
+
 /** コピー禁止マクロ */
 #define SL_DISALLOW_COPY_AND_ASSIGN(...)			\
 __VA_ARGS__(const __VA_ARGS__&) = delete;			\
 void operator=(const __VA_ARGS__&) = delete;
+
+/** インターフェイスマクロ */
+#ifndef	interface
+	#define interface struct
+#endif	// #ifndef	interface 
 
 #endif	// SL_DEFINE_H
 

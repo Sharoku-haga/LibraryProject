@@ -7,7 +7,9 @@
 #include <windows.h>
 #include <crtdbg.h>
 #include "App/App.h"
-#include "sl/Library/Singleton/slBasicSingleton.h"
+#include "sl/Library/Common/slTypes.h"
+#include "sl/Library/Window/slWindow.h"
+#include "sl/Library/SmartPointer/slSmartPointer.h"
 
 /* Entry Point ---------------------------------------------------------------------------------------- */
 
@@ -15,7 +17,6 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 {
 	// メモリリーク検出
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
 	//app::App* pApp = new app::App();
 	//pApp->Initialize();
 	//pApp->Update();
