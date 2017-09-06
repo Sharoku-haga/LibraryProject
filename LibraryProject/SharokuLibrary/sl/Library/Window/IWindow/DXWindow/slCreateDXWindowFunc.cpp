@@ -15,10 +15,38 @@
 namespace sl
 {
 
-/* Function Prototype ----------------------------------------------------------------------------------------- */
+/*  Global Function ------------------------------------------------------------------------------------------- */
 
 // ウィンドウプロシージャ関数
-LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
+LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
+{
+	switch(iMsg)
+	{
+
+	case WM_CLOSE:
+		DestroyWindow(hWnd);
+		return 0;
+		break;
+
+	case WM_KEYDOWN:
+		switch(static_cast<char>(wParam))
+		{
+		case VK_ESCAPE:
+			PostQuitMessage(0);
+			return 0;
+			break;
+		}
+		break;
+
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		return 0;
+		break;
+
+	}
+
+	return DefWindowProc(hWnd, iMsg, wParam, lParam);
+}
 
 #ifdef ADJUST_CLIENT_SIZE
 
@@ -28,7 +56,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam);
 * @param[in] widthSize	調整したい横のサイズ
 * @param[in] heightSize	調整したい縦のサイズ
 */
-void AjustClientSize(HWND hWnd, int widthSize, int heightSize);
+void AjustClientSize(HWND hWnd, int widthSize, int heightSize)
+{
+	// ウィンドウサイズとクライアントサイズを求める
+	RECT widowRect;
+	GetWindowRect(hWnd, &widowRect);
+	RECT clientRect;
+	GetClientRect(hWnd, &clientRect);
+
+	// ウィンドウサイズとクライアントサイズの差からウィンドウの枠の長さを求める
+	int winFlameWidth  = static_cast<int>((widowRect.right - widowRect.left) - (clientRect.right - clientRect.left));
+	int winFlameHeight = static_cast<int>((widowRect.bottom - widowRect.top) - (clientRect.bottom - clientRect.top));
+
+	// ウィンドウの幅を再設定する
+	SetWindowPos(hWnd, HWND_TOP, 0, 0, (widthSize + winFlameWidth), (heightSize + (widowRect.bottom - clientRect.bottom)), SWP_NOMOVE);
+}
 
 #endif	// ADJUST_CLIENT_SIZE
 
@@ -89,56 +131,6 @@ UniquePtr<DXWindow> CreateDXWindow(t_char* pWinName, int winWidth, int winHeight
 	UniquePtr<DXWindow> pWindow(new DXWindow(hWnd));
 	return pWindow;
 }
-
-LRESULT CALLBACK WndProc(HWND hWnd, UINT iMsg, WPARAM wParam, LPARAM lParam)
-{
-	switch(iMsg)
-	{
-
-	case WM_CLOSE:
-		DestroyWindow(hWnd);
-		return 0;
-		break;
-
-	case WM_KEYDOWN:
-		switch(static_cast<char>(wParam))
-		{
-		case VK_ESCAPE:
-			PostQuitMessage(0);
-			return 0;
-			break;
-		}
-		break;
-
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		return 0;
-		break;
-
-	}
-
-	return DefWindowProc(hWnd, iMsg, wParam, lParam);
-}
-
-#ifdef ADJUST_CLIENT_SIZE
-
-void AjustClientSize(HWND hWnd, int widthSize, int heightSize)
-{
-	// ウィンドウサイズとクライアントサイズを求める
-	RECT widowRect;
-	GetWindowRect(hWnd, &widowRect);
-	RECT clientRect;
-	GetClientRect(hWnd, &clientRect);
-
-	// ウィンドウサイズとクライアントサイズの差からウィンドウの枠の長さを求める
-	int winFlameWidth  = static_cast<int>((widowRect.right - widowRect.left) - (clientRect.right - clientRect.left));
-	int winFlameHeight = static_cast<int>((widowRect.bottom - widowRect.top) - (clientRect.bottom - clientRect.top));
-
-	// ウィンドウの幅を再設定する
-	SetWindowPos(hWnd, HWND_TOP, 0, 0, (widthSize + winFlameWidth), (heightSize + (widowRect.bottom - clientRect.bottom)), SWP_NOMOVE);
-}
-
-#endif	// ADJUST_CLIENT_SIZE
 
 }	// namespace sl
 

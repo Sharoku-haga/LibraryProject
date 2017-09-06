@@ -22,6 +22,7 @@
     <ClInclude Include="sl\Library\Common\slDefine.h" />
     <ClInclude Include="sl\Library\Common\slRect.h" />
     <ClInclude Include="sl\Library\Common\slTypes.h" />
+    <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
     <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slDefaultLifeTime.h" />

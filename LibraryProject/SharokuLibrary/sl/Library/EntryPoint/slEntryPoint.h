@@ -1,22 +1,22 @@
 ﻿//==================================================================================================================================//
-//!< @file		Main.cpp
-//!< @brief		Library用テストアプリケーション
+//!< @file		slEntryPoint.h
+//!< @brief		メイン関数関連のヘッダ
 //!< @author	T.Haga
 //!< @data		作成日時：2017/09/07
 //==================================================================================================================================//
 
-#include <crtdbg.h>
-#include "sl/Library/EntryPoint/slEntryPoint.h"
+#ifndef SL_ENTRY_POINT_H
+#define SL_ENTRY_POINT_H
 
-/* Entry Point ---------------------------------------------------------------------------------------- */
+#include "../../slBuild.h"
 
-ENTRY_FUNCTION()
-{
-	// メモリリーク検出
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#ifdef DIRECT_X_11
+	#include<windows.h> 
+	#define ENTRY_FUNCTION()	INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, INT nCmdShow)
+#endif	// DIRECT_X_11
 
-	return 0;
-}
+
+#endif	// SL_ENTRY_POINT_H
 
 //==================================================================================================================================//
 // END OF FILE
