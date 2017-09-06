@@ -11,7 +11,10 @@
 //!< SharokuLibrary
 //==============================================================================================================//
 
-/** ウィンドウ関連ヘッダ */
+/** Main関数関連 */
+#include "Library/EntryPoint/slEntryPoint.h"
+
+/** ウィンドウ関連 */
 #include "Library/Window/slWindow.h"
 
 #endif	// SL_H

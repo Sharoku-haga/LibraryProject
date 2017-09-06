@@ -40,6 +40,9 @@
     <Filter Include="sl\Library\SmartPointer\WeakPtr">
       <UniqueIdentifier>{b4c79877-dbfc-4301-8763-1c81c32ec133}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\EntryPoint">
+      <UniqueIdentifier>{5e3c97ae-8196-4e40-8672-01d15716a326}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -104,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr.h">
       <Filter>sl\Library\SmartPointer\WeakPtr</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h">
+      <Filter>sl\Library\EntryPoint</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
