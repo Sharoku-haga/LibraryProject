@@ -8,7 +8,7 @@
 #ifndef SL_PHOENIX_SINGLETON_H
 #define SL_PHOENIX_SINGLETON_H
 
-#include "../../Common/slDefine.h"
+#include "../../Utility/slDefine.h"
 #include <cstdlib>
 
 namespace sl

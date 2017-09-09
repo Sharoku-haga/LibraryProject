@@ -135,4 +135,9 @@
       <Filter>sl\Library\Window\IWindow</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr_private.inl">
+      <Filter>sl\Library\SmartPointer\UniquePtr</Filter>
+    </None>
+  </ItemGroup>
 </Project>

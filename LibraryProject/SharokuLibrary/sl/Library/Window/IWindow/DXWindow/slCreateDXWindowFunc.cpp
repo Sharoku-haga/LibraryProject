@@ -128,8 +128,7 @@ UniquePtr<DXWindow> CreateDXWindow(t_char* pWinName, int winWidth, int winHeight
 	UpdateWindow(hWnd);
 	SetWindowText(hWnd, pWinName);
 
-	UniquePtr<DXWindow> pWindow(new DXWindow(hWnd));
-	return pWindow;
+	return MakeUniquePtr<DXWindow>(hWnd);
 }
 
 }	// namespace sl

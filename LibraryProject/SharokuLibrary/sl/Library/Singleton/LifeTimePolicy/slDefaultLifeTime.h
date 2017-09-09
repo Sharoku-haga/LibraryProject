@@ -10,7 +10,7 @@
 
 #include <cassert>
 #include <cstdlib>
-#include "../../Common/slDefine.h"
+#include "../../Utility/slDefine.h"
 
 namespace sl
 {

@@ -50,6 +50,9 @@
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\slCreateIWindowFunc.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr_private.inl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3AB129B-0E5A-442C-975B-196F3EF35FF3}</ProjectGuid>
     <RootNamespace>SharokuLibrary</RootNamespace>

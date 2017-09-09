@@ -8,7 +8,7 @@
 #ifndef SL_BASIC_SINGLETON_H
 #define SL_BASIC_SINGLETON_H
 
-#include "../Common/slDefine.h"
+#include "../Utility/slDefine.h"
 #include "CreationPolicy/slStaticCreation.h"
 #include "CreationPolicy/slUsingNewCreation.h"
 #include "LifeTimePolicy/slDefaultLifeTime.h"
