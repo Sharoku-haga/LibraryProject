@@ -10,7 +10,7 @@
 
 #include <windows.h>
 #include "../slIWindow.h"
-#include "../../../Common/slRect.h"
+#include "../../../Utility/slRect.h"
 #include "../../slWindowDeclaration.h"
 
 namespace sl
@@ -29,7 +29,7 @@ public:
 	* Constructor
 	* @param[in] hWnd			ウィンドウハンドル
 	*/
-	DXWindow(HWND hWnd);
+	explicit DXWindow(HWND hWnd);
 
 	/** Destructor */
 	virtual ~DXWindow();
@@ -38,13 +38,13 @@ public:
 	* ウィンドウ更新関数
 	* @return ウィンドウが終了したかどうか ture→終了した false→終了していない 
 	*/
-	virtual bool Update();
+	virtual bool Update()override;
 
 	/**
 	* ウィンドウハンドルを取得する関数
 	* @return ウィンドウハンドル
 	*/
-	virtual WindowHandle GetWindowHandle() const ;
+	virtual WindowHandle GetWindowHandle() const override;
 
 private:
 	HWND		m_hWnd;				//!< ウィンドウハンドル

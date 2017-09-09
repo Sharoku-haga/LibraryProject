@@ -19,9 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="sl\Library\Common\slDefine.h" />
-    <ClInclude Include="sl\Library\Common\slRect.h" />
-    <ClInclude Include="sl\Library\Common\slTypes.h" />
     <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
@@ -29,10 +26,16 @@
     <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slPhoenixSingleton.h" />
     <ClInclude Include="sl\Library\Singleton\slBasicSingleton.h" />
     <ClInclude Include="sl\Library\Singleton\slUserManualSingleton.h" />
+    <ClInclude Include="sl\Library\SmartPointer\Deleter\slDeleter.h" />
     <ClInclude Include="sl\Library\SmartPointer\SharedPtr\slSharedPtr.h" />
     <ClInclude Include="sl\Library\SmartPointer\slSmartPointer.h" />
     <ClInclude Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr.h" />
     <ClInclude Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr.h" />
+    <ClInclude Include="sl\Library\Utility\slDefine.h" />
+    <ClInclude Include="sl\Library\Utility\slRect.h" />
+    <ClInclude Include="sl\Library\Utility\slTemplateFunction.h" />
+    <ClInclude Include="sl\Library\Utility\slTypes.h" />
+    <ClInclude Include="sl\Library\Utility\slUtility.h" />
     <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.h" />
     <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.h" />
     <ClInclude Include="sl\Library\Window\IWindow\slCreateIWindowFunc.h" />

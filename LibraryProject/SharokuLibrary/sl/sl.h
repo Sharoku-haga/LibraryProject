@@ -11,6 +11,9 @@
 //!< SharokuLibrary
 //==============================================================================================================//
 
+/** 便利な道具をまとめたヘッダ */
+#include "Library/Utility/slUtility.h"
+
 /** Main関数関連 */
 #include "Library/EntryPoint/slEntryPoint.h"
 
