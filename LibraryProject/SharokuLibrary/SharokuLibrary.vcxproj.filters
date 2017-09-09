@@ -7,9 +7,6 @@
     <Filter Include="sl\Library">
       <UniqueIdentifier>{b4a07008-3815-4c71-8bd7-668c56c031d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="sl\Library\Common">
-      <UniqueIdentifier>{080145f4-6106-4585-aadb-68e5e125d93d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="sl\Library\Singleton">
       <UniqueIdentifier>{70862028-3381-4df2-9e0d-409fb2b91075}</UniqueIdentifier>
     </Filter>
@@ -43,6 +40,12 @@
     <Filter Include="sl\Library\EntryPoint">
       <UniqueIdentifier>{5e3c97ae-8196-4e40-8672-01d15716a326}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\SmartPointer\Deleter">
+      <UniqueIdentifier>{1cc8c84d-0db6-493e-a017-7fdb31a2d684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Utility">
+      <UniqueIdentifier>{93e6bb51-ae13-4a8e-ba15-f9e4c45f605c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -50,12 +53,6 @@
     </ClInclude>
     <ClInclude Include="sl\slBuild.h">
       <Filter>sl</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Common\slDefine.h">
-      <Filter>sl\Library\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Common\slTypes.h">
-      <Filter>sl\Library\Common</Filter>
     </ClInclude>
     <ClInclude Include="sl\Library\Singleton\slBasicSingleton.h">
       <Filter>sl\Library\Singleton</Filter>
@@ -77,9 +74,6 @@
     </ClInclude>
     <ClInclude Include="sl\Library\Window\slWindowDeclaration.h">
       <Filter>sl\Library\Window</Filter>
-    </ClInclude>
-    <ClInclude Include="sl\Library\Common\slRect.h">
-      <Filter>sl\Library\Common</Filter>
     </ClInclude>
     <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.h">
       <Filter>sl\Library\Window\IWindow\DXWindow</Filter>
@@ -110,6 +104,24 @@
     </ClInclude>
     <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h">
       <Filter>sl\Library\EntryPoint</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\Deleter\slDeleter.h">
+      <Filter>sl\Library\SmartPointer\Deleter</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slDefine.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slRect.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slTypes.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slUtility.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slTemplateFunction.h">
+      <Filter>sl\Library\Utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

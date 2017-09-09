@@ -9,7 +9,7 @@
 #define SL_CREATE_DXWINDOW_FUNC_H
 
 #include <windows.h>
-#include "../../../Common/slTypes.h"
+#include "../../../Utility/slTypes.h"
 #include "../../../SmartPointer/UniquePtr/slUniquePtr.h"
 
 namespace sl

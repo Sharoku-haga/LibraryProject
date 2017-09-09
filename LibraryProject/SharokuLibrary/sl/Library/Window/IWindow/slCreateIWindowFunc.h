@@ -8,8 +8,8 @@
 #ifndef SL_CREATE_IWINDOW_FUNC_H
 #define SL_CREATE_IWINDOW_FUNC_H
 
-#include "../../Common/slTypes.h"
-#include "../../Common/slDefine.h"
+#include "../../Utility/slTypes.h"
+#include "../../Utility/slDefine.h"
 #include "../slWindowDeclaration.h"
 #include "../../SmartPointer/UniquePtr/slUniquePtr.h"
 

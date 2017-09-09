@@ -22,7 +22,7 @@ DXWindow::DXWindow(HWND hWnd)
 
 DXWindow::~DXWindow()
 {
-	if(m_hWnd == nullptr)
+	if(m_hWnd != nullptr)
 	{
 		SendMessage(m_hWnd, WM_CLOSE, 0, 0);
 	}

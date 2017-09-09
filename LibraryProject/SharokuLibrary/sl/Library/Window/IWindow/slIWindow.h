@@ -9,7 +9,7 @@
 #ifndef SL_IWINDOW_H
 #define SL_IWINDOW_H
 
-#include "../../Common/slDefine.h"
+#include "../../Utility/slDefine.h"
 
 namespace sl
 {
