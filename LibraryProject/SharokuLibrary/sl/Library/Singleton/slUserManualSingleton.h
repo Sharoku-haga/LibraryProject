@@ -9,7 +9,7 @@
 #define SL_USER_MANUAL_SINGLETON_H
 
 #include <cassert>
-#include "../Common/slDefine.h"
+#include "../Utility/slDefine.h"
 
 namespace sl
 {

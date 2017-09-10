@@ -8,7 +8,7 @@
 #ifndef SL_USING_NEW_CREATION_H
 #define SL_USING_NEW_CREATION_H
 
-#include "../../Common/slDefine.h"
+#include "../../Utility/slDefine.h"
 
 namespace sl
 {

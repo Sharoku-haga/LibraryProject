@@ -8,7 +8,7 @@
 #ifndef SL_STATIC_CREATION_H
 #define SL_STATIC_CREATION_H
 
-#include"../../Common/slDefine.h"
+#include"../../Utility/slDefine.h"
 
 namespace sl
 {
