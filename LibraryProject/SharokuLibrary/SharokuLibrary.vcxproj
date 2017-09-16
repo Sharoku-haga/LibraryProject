@@ -27,14 +27,19 @@
     <ClInclude Include="sl\Library\Singleton\slBasicSingleton.h" />
     <ClInclude Include="sl\Library\Singleton\slUserManualSingleton.h" />
     <ClInclude Include="sl\Library\SmartPointer\Deleter\slDeleter.h" />
+    <ClInclude Include="sl\Library\SmartPointer\PtrBase\slPtrBase.h" />
+    <ClInclude Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfo.h" />
+    <ClInclude Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.h" />
     <ClInclude Include="sl\Library\SmartPointer\SharedPtr\slSharedPtr.h" />
     <ClInclude Include="sl\Library\SmartPointer\slSmartPointer.h" />
     <ClInclude Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr.h" />
     <ClInclude Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr.h" />
+    <ClInclude Include="sl\Library\Utility\slCompressedPair.h" />
     <ClInclude Include="sl\Library\Utility\slDefine.h" />
     <ClInclude Include="sl\Library\Utility\slRect.h" />
     <ClInclude Include="sl\Library\Utility\slTemplateFunction.h" />
     <ClInclude Include="sl\Library\Utility\slTypes.h" />
+    <ClInclude Include="sl\Library\Utility\slTypeTraits.h" />
     <ClInclude Include="sl\Library\Utility\slUtility.h" />
     <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.h" />
     <ClInclude Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.h" />
@@ -46,12 +51,16 @@
     <ClInclude Include="sl\slBuild.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\slCreateIWindowFunc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="sl\Library\SmartPointer\PtrBase\slPtrBase_private.inl" />
+    <None Include="sl\Library\SmartPointer\SharedPtr\slSharedPtr_private.inl" />
     <None Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr_private.inl" />
+    <None Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr_private.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{A3AB129B-0E5A-442C-975B-196F3EF35FF3}</ProjectGuid>
