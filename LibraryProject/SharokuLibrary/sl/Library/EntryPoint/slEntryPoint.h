@@ -2,7 +2,7 @@
 //!< @file		slEntryPoint.h
 //!< @brief		メイン関数関連のヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/07
+//!< @data		作成日時：2017/09/07	更新履歴：2017/09/17
 //==================================================================================================================================//
 
 #ifndef SL_ENTRY_POINT_H
@@ -12,6 +12,7 @@
 
 #ifdef DIRECT_X_11
 	#include<windows.h> 
+	/** EntryPoint関数のマクロ */
 	#define ENTRY_FUNCTION()	INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, INT nCmdShow)
 #endif	// DIRECT_X_11
 
