@@ -118,13 +118,13 @@ public:
 	* 単項演算子 : アロー演算子
 	* @return リソースへのポインタ
 	*/
-	Ty* operator ->(){ return this->Get(); }
+	Ty* operator ->() const { return this->Get(); }
 
 	/** 
 	* 単項演算子 : 間接参照演算子
 	* @return リソースへの参照
 	*/
-	Ty& operator *(){ return *(this->Get()); }
+	Ty& operator *() const { return *(this->Get()); }
 
 	/** 代入演算子 = SharedPtrをCopyする */
 	SharedPtr& operator = (const SharedPtr& rPtr);

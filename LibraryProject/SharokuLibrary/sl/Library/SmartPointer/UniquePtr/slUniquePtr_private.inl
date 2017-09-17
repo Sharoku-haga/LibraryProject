@@ -13,107 +13,105 @@ namespace sl
 
 /* Public Functions ------------------------------------------------------------------------------------------- */
 
-template< class T
-		, template<class> class Deleter >
-UniquePtr<T, Deleter>::UniquePtr() noexcept
-	: m_Pointer(nullptr)
+template< class Ty
+		, class Deleter>
+UniquePtr<Ty, Deleter>::UniquePtr() noexcept
+	: m_pResource(nullptr)
 {}
 
-template< class T
-		, template<class> class Deleter >
-UniquePtr<T, Deleter>::UniquePtr(T* pointer)  noexcept
-	: m_Pointer(pointer)
+template< class Ty
+		, class Deleter>
+UniquePtr<Ty, Deleter>::UniquePtr(Ty* pointer)
+	: m_pResource(pointer)
 {}
 
-template< class T
-		, template<class> class Deleter >
-UniquePtr<T, Deleter>::UniquePtr(UniquePtr&& uiniquePtr) noexcept
-		: m_Pointer(uiniquePtr.Release())
+template< class Ty
+		, class Deleter>
+UniquePtr<Ty, Deleter>::UniquePtr(UniquePtr&& rRight) noexcept
+		: m_pResource(rRight.Release())
 {}
 
-template< class T
-		, template<class> class Deleter >
-template< class OtherT
-		, template<class> class OtherDeleter>
-UniquePtr<T, Deleter>::UniquePtr(UniquePtr<OtherT, OtherDeleter>&& uiniquePtr) noexcept
-	: m_Pointer(uiniquePtr.Release())
+template< class Ty
+		, class Deleter>
+template< class OtherTy
+		, class OtherDeleter>
+UniquePtr<Ty, Deleter>::UniquePtr(UniquePtr<OtherTy, OtherDeleter>&& rRight) noexcept
+	: m_pResource(rRight.Release())
 {}
 	
-template< class T
-		, template<class> class Deleter >
-UniquePtr<T, Deleter>::~UniquePtr()
+template< class Ty
+		, class Deleter>
+UniquePtr<Ty, Deleter>::~UniquePtr()
 {
-	Deleter<T>()(m_Pointer);
+	Deleter()(m_pResource);
 }
 
-template< class T
-		, template<class> class Deleter >
-T* UniquePtr<T, Deleter>::Release() noexcept
+template< class Ty
+		, class Deleter>
+Ty* UniquePtr<Ty, Deleter>::Release() noexcept
 {
-	T* pointer = m_Pointer;
-	m_Pointer = nullptr;
+	Ty* pointer = m_pResource;
+	m_pResource = nullptr;
 	return pointer;
 }
 
-template< class T
-		, template<class> class Deleter >
-void UniquePtr<T, Deleter>::Reset(T* pointer)
+template< class Ty
+		, class Deleter>
+void UniquePtr<Ty, Deleter>::Reset(Ty* pointer)
 {
-	Deleter<T>()(m_Pointer);
-	m_Pointer = pointer;
+	Deleter()(m_pResource);
+	m_pResource = pointer;
 }
 
-template< class T
-		, template<class> class Deleter >
-void UniquePtr<T, Deleter>::Swap(UniquePtr& rUiniquePtr)noexcept
+template< class Ty
+		, class Deleter>
+void UniquePtr<Ty, Deleter>::Swap(UniquePtr& rPtr)noexcept
 {
-	T* tmp = this->Release();
-	this->Reset(rUiniquePtr.Release());
-	rUiniquePtr.Reset(tmp);
+	SwapTemplate(*this, rPtr);
 }
 
-template< class T
-		, template<class> class Deleter >
-UniquePtr<T, Deleter>&	UniquePtr<T, Deleter>::operator = (UniquePtr&& uiniquePtr)
+template< class Ty
+		, class Deleter>
+UniquePtr<Ty, Deleter>&	UniquePtr<Ty, Deleter>::operator = (UniquePtr&& rRight)
 {
-	this->Reset(uiniquePtr.Release());
-	return *this;
+	this->Reset(rRight.Release());
+	return (*this);
 }
 
-template< class T
-		, template<class> class Deleter >
-template< class OtherT
-		, template<class> class OtherDeleter>
-UniquePtr<T, Deleter>&	UniquePtr<T, Deleter>::operator = (UniquePtr< OtherT, OtherDeleter>&& uiniquePtr)
+template< class Ty
+		, class Deleter>
+template< class OtherTy
+		, class OtherDeleter>
+UniquePtr<Ty, Deleter>&	UniquePtr<Ty, Deleter>::operator = (UniquePtr< OtherTy, OtherDeleter>&& rRight)
 {
-	this->Reset(uiniquePtr.Release());
+	this->Reset(rRight.Release());
 	return *this;
 }
 
 /* Global Functions ------------------------------------------------------------------------------------------- */
 
-template< class T
-		, template<class> class Deleter
+template< class Ty
+		, class Deleter
 		, class... Args >
-UniquePtr<T, Deleter> MakeUniquePtr(Args&&... args)
+UniquePtr<Ty, Deleter> MakeUniquePtr(Args&&... args)
 {
-	return UniquePtr<T, Deleter>(new T(std::forward<Args>(args)...));
+	return UniquePtr<Ty, Deleter>(new Ty(std::forward<Args>(args)...));
 }
 
-template< class T
-		, template<class T> class Deleter 
-		, class OtherT
-		, template<class OtherT>class OtherDeleter >
-const bool operator == (const UniquePtr<T, Deleter>& rLeft, const UniquePtr<OtherT, OtherDeleter>& rRight) noexcept
+template< class Ty
+		, class Deleter 
+		, class OtherTy
+		, class OtherDeleter >
+const bool operator == (const UniquePtr<Ty, Deleter>& rLeft, const UniquePtr<OtherTy, OtherDeleter>& rRight) noexcept
 {
 	return rLeft.Get() == rRight.Get();
 }
 
-template< class T
-		, template<class T> class Deleter 
-		, class OtherT
-		, template<class OtherT>class OtherDeleter >
-const bool operator != (const UniquePtr<T, Deleter>& rLeft, const UniquePtr<OtherT, OtherDeleter>& rRight) noexcept
+template< class Ty
+		, class Deleter 
+		, class OtherTy
+		, class OtherDeleter >
+const bool operator != (const UniquePtr<Ty, Deleter>& rLeft, const UniquePtr<OtherTy, OtherDeleter>& rRight) noexcept
 {
 	return rLeft.Get() != rRight.Get();
 }
