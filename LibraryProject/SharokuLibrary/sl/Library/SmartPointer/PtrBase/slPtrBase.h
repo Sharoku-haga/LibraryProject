@@ -85,7 +85,7 @@ public:
 	* Getter
 	* @return リソースへのポインタ
 	*/
-	Ty* Get()const{ return m_pResource; }
+	inline Ty* Get() const { return m_pResource; }
 
 	/**
 	* 参照カウント数を確認する関数

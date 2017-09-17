@@ -17,12 +17,11 @@ namespace sl
 
 /** @todo Deleter増やすならDeleter取得についての実装も行う --------------------------------------------- */
 //===================================================================================//
-//!< 自作のユニークポインタ
-//!< スマートポインタの1つ
+//!< ユニークポインタ
 //!< リソースへのポインタの所有権を唯一持っているように振舞う
 //===================================================================================//
-template< class T
-		, template<class> class Deleter = DefaultDeleter>
+template< class Ty
+		, class Deleter = DefaultDeleter<Ty>>
 class UniquePtr
 {
 
@@ -34,21 +33,15 @@ public:
 	* Constructor 
 	* @param[in] pointer リソースへのポインタ
 	*/
-	explicit UniquePtr(T* pointer)  noexcept;
+	explicit UniquePtr(Ty* pointer);
 
-	/**
-	* MoveConstructor
-	* @param[out] uiniquePtr 所有権を渡してくれるユニークポインタ
-	*/
-	UniquePtr(UniquePtr&& uiniquePtr) noexcept;
+	/** MoveConstructor */
+	UniquePtr(UniquePtr&& rRight) noexcept;
 
-	/**
-	* MoveConstructor
-	* @param[out] uiniquePtr 所有権を渡してくれる変換可能なユニークポインタ
-	*/
-	template< class OtherT
-			, template<class> class OtherDeleter>
-	UniquePtr(UniquePtr<OtherT, OtherDeleter>&& uiniquePtr) noexcept;
+	/** 変換可能な型の場合のMoveConstructor */
+	template< class OtherTy
+			, class OtherDeleter>
+	UniquePtr(UniquePtr<OtherTy, OtherDeleter>&& rRight) noexcept;
 
 	/** Destructor */
 	~UniquePtr();
@@ -57,39 +50,38 @@ public:
 	* リソースの所有権を放棄する関数 
 	* @return リソースへのポインタ 
 	*/
-	T* Release() noexcept;
+	Ty* Release() noexcept;
 
 	/** 
 	* リソースの所有権を解放し、新たに再設定する関数 
 	* デフォルト引数で呼んだ場合は、リソースの所有権を解放するのみ
 	* @param[in] 再設定したいリソースへのポインタ
 	*/
-	void Reset(T* pointer = nullptr);
+	void Reset(Ty* pointer = nullptr);
 
 	/**
 	* スワップ関数(交換関数)
 	* @param[in] rUiniquePtr 交換したいユニークポインタ
 	*/
-	void Swap(UniquePtr& rUiniquePtr)noexcept;
+	void Swap(UniquePtr& rPtr)noexcept;
 
 	/** 
-	* 所有権を保持しているリソースへのポインタを取得する関数
+	* Getter
 	* @return 所有しているリソースへのポインタ
 	*/
-	inline T*  Get() noexcept{ return m_Pointer;}
-	inline const T*  Get()  const noexcept{ return m_Pointer; }
+	inline Ty*  Get() const { return m_pResource;}
 
 	/** 
 	* 単項演算子 : アロー演算子
 	* @return リソースへのポインタ
 	*/
-	T* operator -> () const noexcept{ return m_Pointer; }
+	Ty* operator -> () const { return m_pResource; }
 
 	/** 
 	* 単項演算子 : 間接参照演算子
 	* @return リソースへの参照
 	*/
-	T& operator * () const { return *m_Pointer; }
+	Ty& operator * () const { return *m_pResource; }
 
 	/** 
 	* 有効なリソースを所有しているかを判断 
@@ -97,30 +89,19 @@ public:
 	*/
 	explicit operator bool() const noexcept 
 	{ 
-		return m_Pointer != nullptr; 
+		return m_pResource != nullptr; 
 	}
 	
-	/**
-	* 代入演算子 =
-	* 自身が所有しているリソースを解放し、pUniqueからリソースの所有権をうけとる
-	* @param[out] uiniquePtr 所有権を渡してくれるユニークポインタ
-	* @return 自身の参照
-	*/
-	UniquePtr& operator = (UniquePtr&& uiniquePtr);
+	/** 代入演算子 = UniquePtrをMoveする */
+	UniquePtr& operator = (UniquePtr&& rRight);
 
-	/**
-	* 代入演算子 =
-	* 自身が所有しているリソースを解放し、pUniqueからリソースの所有権をうけとる
-	* こちらは変換可能なpUnique場合のもの
-	* @param[out] uiniquePtr 所有権を渡してくれるユニークポインタ
-	* @return 自身の参照
-	*/
-	template< class OtherT
-			, template<class>class OtherDeleter>
-	UniquePtr& operator = (UniquePtr< OtherT, OtherDeleter>&& uiniquePtr);
+	/** 代入演算子 = 変換可能な型をもつUniquePtrをMoveする */
+	template< class OtherTy
+			, class OtherDeleter>
+	UniquePtr& operator = (UniquePtr< OtherTy, OtherDeleter>&& rRight);
 
 private:
-	T*		m_Pointer;			//!< リソースへのポインタ
+	Ty*		m_pResource;			//!< リソースへのポインタ
 
 	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(UniquePtr);
@@ -134,10 +115,10 @@ private:
 * @return 作成したユニークポインタ
 * @todo この関数で使用されているstd::forwardをなくしたい
 */
-template< class T
-		, template<class> class Deleter = DefaultDeleter
+template< class Ty
+		, class Deleter = DefaultDeleter<Ty>
 		, class... Args >
-UniquePtr<T, Deleter> MakeUniquePtr(Args&&... args);
+UniquePtr<Ty, Deleter> MakeUniquePtr(Args&&... args);
 
 /**
 * 比較演算子 ==
@@ -145,11 +126,11 @@ UniquePtr<T, Deleter> MakeUniquePtr(Args&&... args);
 * @param[in] rRight 比較したい右辺のユニークポインタ
 * @return ture→等しい false→等しくない
 */
-template< class T
-		, template<class T> class Deleter
-		, class OtherT
-		, template<class OtherT>class OtherDeleter >
-const bool operator == (const UniquePtr<T, Deleter>& rLeft, const UniquePtr<OtherT, OtherDeleter>& rRight) noexcept;
+template< class Ty
+		, class Deleter
+		, class OtherTy
+		, class OtherDeleter >
+const bool operator == (const UniquePtr<Ty, Deleter>& rLeft, const UniquePtr<OtherTy, OtherDeleter>& rRight) noexcept;
 
 /**
 * 比較演算子 !=
@@ -157,11 +138,11 @@ const bool operator == (const UniquePtr<T, Deleter>& rLeft, const UniquePtr<Othe
 * @param[in] rRight 比較したい右辺のユニークポインタ
 * @return ture→等しない false→等しい
 */
-template< class T
-		, template<class T> class Deleter
-		, class OtherT
-		, template<class OtherT>class OtherDeleter >
-const bool operator != (const UniquePtr<T, Deleter>& rLeft, const UniquePtr<OtherT, OtherDeleter>& rRight) noexcept;
+template< class Ty
+		, class Deleter
+		, class OtherTy
+		, class OtherDeleter >
+const bool operator != (const UniquePtr<Ty, Deleter>& rLeft, const UniquePtr<OtherTy, OtherDeleter>& rRight) noexcept;
 
 }	// namespace sl
 
