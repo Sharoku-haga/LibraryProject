@@ -46,6 +46,12 @@
     <Filter Include="sl\Library\Utility">
       <UniqueIdentifier>{93e6bb51-ae13-4a8e-ba15-f9e4c45f605c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\SmartPointer\PtrBase">
+      <UniqueIdentifier>{cd13a96c-5a08-4cca-9360-4d89dbed3767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\SmartPointer\PtrSharedInfo">
+      <UniqueIdentifier>{4c7432e3-3ed0-416e-a8d6-85059a5502c7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -120,8 +126,23 @@
     <ClInclude Include="sl\Library\Utility\slUtility.h">
       <Filter>sl\Library\Utility</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slCompressedPair.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
     <ClInclude Include="sl\Library\Utility\slTemplateFunction.h">
       <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slTypeTraits.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\PtrBase\slPtrBase.h">
+      <Filter>sl\Library\SmartPointer\PtrBase</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfo.h">
+      <Filter>sl\Library\SmartPointer\PtrSharedInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.h">
+      <Filter>sl\Library\SmartPointer\PtrSharedInfo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -134,10 +155,22 @@
     <ClCompile Include="sl\Library\Window\IWindow\slCreateIWindowFunc.cpp">
       <Filter>sl\Library\Window\IWindow</Filter>
     </ClCompile>
+    <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp">
+      <Filter>sl\Library\SmartPointer\PtrSharedInfo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr_private.inl">
       <Filter>sl\Library\SmartPointer\UniquePtr</Filter>
+    </None>
+    <None Include="sl\Library\SmartPointer\PtrBase\slPtrBase_private.inl">
+      <Filter>sl\Library\SmartPointer\PtrBase</Filter>
+    </None>
+    <None Include="sl\Library\SmartPointer\SharedPtr\slSharedPtr_private.inl">
+      <Filter>sl\Library\SmartPointer\SharedPtr</Filter>
+    </None>
+    <None Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr_private.inl">
+      <Filter>sl\Library\SmartPointer\WeakPtr</Filter>
     </None>
   </ItemGroup>
 </Project>

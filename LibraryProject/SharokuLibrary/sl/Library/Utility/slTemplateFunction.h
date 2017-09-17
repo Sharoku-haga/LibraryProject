@@ -2,13 +2,14 @@
 //!< @file		slTemplateFunction.h
 //!< @brief		テンプレート関数群のヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/09
+//!< @data		作成日時：2017/09/09	更新履歴：2017/09/17
 //==================================================================================================================================//
 
 #ifndef SL_TEMPLATE_FUNCTION_H
 #define SL_TEMPLATE_FUNCTION_H
 
 #include "../../slBuild.h"
+#include "slTypeTraits.h"
 
 namespace sl
 {
@@ -21,14 +22,41 @@ namespace sl
 * 安全解放テンプレート関数
 * @param[in] pointer 解放したいインスタンスへのポインタ
 */
-template<class T>
-inline void SafeDelete(T*& pointer)
+template<class Ty>
+inline void SafeDelete(Ty*& pointer)
 {
 	if(pointer != nullptr)
 	{
 		delete pointer;
 		pointer = nullptr;
 	}
+}
+
+/** 
+* 安全解放テンプレート関数.配列版
+* @param[in] arrayPointer 解放したい配列のポインタ
+*/
+template<class Ty>
+inline void SafeArrayDelete(Ty*& arrayPointer)
+{
+	if(arrayPointer != nullptr)
+	{
+		delete[] arrayPointer;
+		arrayPointer = nullptr;
+	}
+}
+
+/** 
+* スワップテンプレート関数
+* @param[in] rA 2番目の引数(rB)と値を交換したい値	 
+* @param[in] rB 1番目の引数(rA)と値を交換したい値
+*/
+template<class Ty>
+void SwapTemplate(Ty& rA, Ty& rB)noexcept
+{
+	Ty temp = Move(rA);
+	rA = Move(rB);
+	rB = Move(temp);
 }
 
 //======================================================================//
@@ -41,8 +69,8 @@ inline void SafeDelete(T*& pointer)
 * DirectX用 解放テンプレート関数
 * @param[in] dxPointer 解放したいDirectX関連のポインタ
 */
-template <class T>
-inline void SafeReleaseDX(T*& dxPointer)
+template <class Ty>
+inline void SafeReleaseDX(Ty*& dxPointer)
 {
 	if(dxPointer != nullptr)
 	{

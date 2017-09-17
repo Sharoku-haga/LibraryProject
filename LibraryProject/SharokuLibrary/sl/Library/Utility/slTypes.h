@@ -11,6 +11,8 @@
 namespace sl
 {
 
+typedef unsigned long u_long;
+
 /** char型の型定義 */
 #ifdef  UNICODE
 #ifndef SL_T_CHAR_DEFINED
