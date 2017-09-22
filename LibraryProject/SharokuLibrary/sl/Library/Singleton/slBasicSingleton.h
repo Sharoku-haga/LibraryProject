@@ -2,7 +2,7 @@
 //!< @file		slBasicSingleton.h
 //!< @brief		sl::BasicSingletonクラスヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/04	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/04	更新履歴：2017/09/24
 //==================================================================================================================================//
 
 #ifndef SL_BASIC_SINGLETON_H
@@ -19,21 +19,21 @@ namespace sl
 //===================================================================================//
 //!< 基本的なシングルトンパターンのテンプレートクラス
 //!< 機能の組みかえができる
-//!< @attention クラスTに必ずCreationPolicyをフレンドクラスとして明記する
+//!< @attention クラスTyに必ずCreationPolicyをフレンドクラスとして明記する
 //===================================================================================//
-template< class T
+template< class Ty
 		, template<class> class CreationPolicy = StaticCreation
-		, template<class> class LifeTimePolicy = DefaultLifeTime
-		>
+		, template<class> class LifeTimePolicy = DefaultLifeTime>
 class BasicSingleton
 {
 
 public:
 	/**
-	* インスタンスへの参照を取得する関数
+	* インスタンスへの参照を取得する関数.
+	* Ty型クラスのインスタンスがなければ作成を行う
 	* @return インスタンスへの参照
 	*/
-	static T& Instance()
+	static Ty& Instance()
 	{
 		if(m_pInstance == nullptr)
 		{
@@ -44,11 +44,16 @@ public:
 	}
 
 private:
-	static T*			m_pInstance;				//!< T型クラスのインスタンスへのポインタ
+	static Ty*			m_pInstance;				//!< Ty型クラスのインスタンスへのポインタ
 	static bool			m_Destroyed;				//!< 破棄されたかどうかのフラグ ture→破棄された false→破棄されていない
 
-	inline BasicSingleton() noexcept = default;
-	inline ~BasicSingleton() = default;
+	/** Constructor */
+	BasicSingleton() noexcept = default;
+
+	/** Destructor */
+	~BasicSingleton() = default;
+
+	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(BasicSingleton);
 
 	/** インスタンスを作成する関数 */
@@ -56,34 +61,35 @@ private:
 	{
 		if(m_Destroyed)
 		{
-			LifeTimePolicy<T>::HandleOnDeadReference();
+			LifeTimePolicy<Ty>::HandleOnDeadReference();
 			m_Destroyed = false;
 		}
-		m_pInstance = CreationPolicy<T>::Create();
-		LifeTimePolicy<T>::ScheduleDestruction(m_pInstance, DestroySingleton);
+		m_pInstance = CreationPolicy<Ty>::Create();
+		LifeTimePolicy<Ty>::ScheduleDestruction(m_pInstance, DestroySingleton);
 	}
 
 	/** 破棄関数 */
 	static void DestroySingleton()
 	{
-		CreationPolicy<T>::Destroy(m_pInstance);
+		CreationPolicy<Ty>::Destroy(m_pInstance);
 		m_pInstance = nullptr;
 		m_Destroyed = true;
 	}
 
 };	// class BasicSingleton
 
-template< class T
-		, template<class> class CreationPolicy = StaticCreation
-		, template<class> class LifeTimePolicy = DefaultLifeTime
-		>
-T* BasicSingleton<T, CreationPolicy, LifeTimePolicy>::m_pInstance = nullptr;
 
-template< class T
+/* Static Variable -------------------------------------------------------------------------------------------- */
+
+template< class Ty
 		, template<class> class CreationPolicy = StaticCreation
-		, template<class> class LifeTimePolicy = DefaultLifeTime
-		>
-bool BasicSingleton<T, CreationPolicy, LifeTimePolicy>::m_Destroyed = false;
+		, template<class> class LifeTimePolicy = DefaultLifeTime>
+Ty* BasicSingleton<Ty, CreationPolicy, LifeTimePolicy>::m_pInstance = nullptr;
+
+template< class Ty
+		, template<class> class CreationPolicy = StaticCreation
+		, template<class> class LifeTimePolicy = DefaultLifeTime>
+bool BasicSingleton<Ty, CreationPolicy, LifeTimePolicy>::m_Destroyed = false;
 
 }	// namespace sl
 

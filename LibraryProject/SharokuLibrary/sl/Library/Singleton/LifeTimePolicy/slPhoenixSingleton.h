@@ -2,7 +2,7 @@
 //!< @file		slPhoenixSingleton.h
 //!< @brief		sl::PhoenixSingletonクラスヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/04	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/04	更新履歴：2017/09/24
 //==================================================================================================================================//
 
 #ifndef SL_PHOENIX_SINGLETON_H
@@ -21,7 +21,7 @@ namespace sl
 //!< 寿命管理ポリシークラスの1つ 
 //!< @data このクラスはまだ改良の余地あり
 //===================================================================================//
-template<class T>
+template<class Ty>
 class PhoenixSingleton
 {
 
@@ -35,27 +35,30 @@ public:
 
 	/**
 	* プログラム終了時に呼び出される関数を登録する関数
-	* @param[in] pInstance T型インスタンスへのポインタ ※このクラスでは使用しない
+	* @param[in] pInstance Ty型インスタンスへのポインタ ※このクラスでは使用しない
 	* @param[in] (*func)() 登録したい関数
 	*/
-	static void ScheduleDestruction(T* pInstance, void(*func)())
+	static void ScheduleDestruction(Ty* pInstance, void(*func)())
 	{
 		std::atexit(func);
 	}
 
 private:
+	/** Constructor */
 	PhoenixSingleton() noexcept = default;
+
+	/** Destructor */
 	~PhoenixSingleton() = default;
+
+	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(PhoenixSingleton);
 
 };	// class PhoenixSingleton
 
 }	// namespace sl
 
-
 #endif	// SL_PHOENIX_SINGLETON_H
 
 //==================================================================================================================================//
 // END OF FILE
 //==================================================================================================================================//
-
