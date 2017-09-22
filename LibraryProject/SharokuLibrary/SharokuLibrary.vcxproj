@@ -19,6 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="sl\Library\Debugger\slDebug.h" />
+    <ClInclude Include="sl\Library\Debugger\slDebugDefine.h" />
+    <ClInclude Include="sl\Library\Debugger\slDebugFunction.h" />
     <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
@@ -51,6 +54,7 @@
     <ClInclude Include="sl\slBuild.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="sl\Library\Debugger\slDebugFunction.cpp" />
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp" />

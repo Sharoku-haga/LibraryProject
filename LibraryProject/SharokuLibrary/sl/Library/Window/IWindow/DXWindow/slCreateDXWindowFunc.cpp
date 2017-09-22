@@ -7,10 +7,10 @@
 
 /* Includes --------------------------------------------------------------------------------------------------- */
 
-#include <cassert>
 #include "slDXWindow.h"
 #include "slCreateDXWindowFunc.h"
 #include "../../../../slBuild.h"
+#include "../../../Debugger/slDebugDefine.h"
 
 namespace sl
 {
@@ -110,10 +110,8 @@ UniquePtr<DXWindow> CreateDXWindow(t_char* pWinName, int winWidth, int winHeight
 
 	if(hWnd == NULL)
 	{
-		/** @todo ここになんらかのエラー処理を入れる --------------------------------------------------------------------------------------------------*/
-		// 仮エラー処理としてアサートを入れておく
-		assert(false);	
 		MessageBox(0, "ウィンドウ生成に失敗しました。", NULL, MB_OK);
+		slAssertCheckExpression((hWnd != NULL));
 	}
 
 	SetProcessDPIAware();					// WindowsにDPIAwareであることを示す(不適切なサイズやフォントが使用されるのを防ぐ)

@@ -2,19 +2,18 @@
 //!< @file		Main.cpp
 //!< @brief		Library用テストアプリケーション
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/07	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/07	更新履歴：2017/09/22
 //==================================================================================================================================//
 
 #include <crtdbg.h>
+#include "sl/Library/Debugger/slDebug.h"
 #include "sl/Library/EntryPoint/slEntryPoint.h"
 
 /* Entry Point ---------------------------------------------------------------------------------------- */
 
 ENTRY_FUNCTION()
 {
-	// メモリリーク検出
-	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-
+	sl::CheckMemoryLeak();
 	return 0;
 }
 
