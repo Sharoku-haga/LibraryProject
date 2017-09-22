@@ -52,6 +52,9 @@
     <Filter Include="sl\Library\SmartPointer\PtrSharedInfo">
       <UniqueIdentifier>{4c7432e3-3ed0-416e-a8d6-85059a5502c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Debugger">
+      <UniqueIdentifier>{85146789-b683-4c53-8dc9-0448a33e2b70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -144,6 +147,15 @@
     <ClInclude Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.h">
       <Filter>sl\Library\SmartPointer\PtrSharedInfo</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Debugger\slDebug.h">
+      <Filter>sl\Library\Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Debugger\slDebugDefine.h">
+      <Filter>sl\Library\Debugger</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Debugger\slDebugFunction.h">
+      <Filter>sl\Library\Debugger</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
@@ -157,6 +169,9 @@
     </ClCompile>
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp">
       <Filter>sl\Library\SmartPointer\PtrSharedInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Debugger\slDebugFunction.cpp">
+      <Filter>sl\Library\Debugger</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
