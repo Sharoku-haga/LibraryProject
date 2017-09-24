@@ -2,7 +2,7 @@
 //!< @file		slUsingNewCreation.h
 //!< @brief		sl::UsingNewCreationクラスヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/04	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/04	更新履歴：2017/09/24
 //==================================================================================================================================//
 
 #ifndef SL_USING_NEW_CREATION_H
@@ -17,29 +17,38 @@ namespace sl
 //!< newを使用してインスタンスを生成するクラス
 //!< シングルトンパターンの生成ポリシークラスの1つ
 //===================================================================================//
-template<class T>
+template<class Ty>
 class UsingNewCreation
 {
 
 public:
 	/**
 	* インスタンス生成関数
-	* @return T型インスタンスへのポインタ
+	* @return Ty型クラスのインスタンスへのポインタ
 	*/
-	static T* Create()
+	static Ty* Create()
 	{
-		return new T();
+		return new Ty();
 	}
 
-	/** 破棄関数 */
-	static void Destroy(T* pInstance)
+	/** 
+	* 破棄関数 
+	* deleteを行う
+	* @param[out] pInstance 破棄したいインスタンスへのポインタ
+	*/
+	static void Destroy(Ty* pInstance)
 	{
 		delete pInstance;
 	}
 
 private:
+	/** Constructor */
 	UsingNewCreation() noexcept = default;
+
+	/** Destructor */
 	~UsingNewCreation() = default;
+
+	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(UsingNewCreation);
 
 };	// class UsingNewCreation

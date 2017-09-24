@@ -2,7 +2,7 @@
 //!< @file		slStaticCreation.h
 //!< @brief		sl::StaticCreationクラスヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/04	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/04	更新履歴：2017/09/24
 //==================================================================================================================================//
 
 #ifndef SL_STATIC_CREATION_H
@@ -17,30 +17,39 @@ namespace sl
 //!< 静的領域にインスタンスを生成するクラス
 //!< シングルトンパターンの生成ポリシークラスの1つ
 //===================================================================================//
-template<class T>
+template<class Ty>
 class StaticCreation
 {
 
 public:
 	/**
 	* インスタンス生成関数
-	* @return T型インスタンスへのポインタ
+	* @return Ty型クラスのインスタンスへのポインタ
 	*/
-	static T* Create()
+	static Ty* Create()
 	{
-		static T staticClass;
+		static Ty staticClass;
 		return &staticClass;
 	}
 
-	/** 破棄関数 */
-	static void Destroy(T* pInstance)
+	/** 
+	* 破棄関数.
+	* デストラクタをよぶ
+	* @param[out] pInstance 破棄したいインスタンスへのポインタ
+	*/
+	static void Destroy(Ty* pInstance)
 	{
-		pInstance->~T();
+		pInstance->~Ty();
 	}
 
 private:
+	/** Constructor */
 	StaticCreation() noexcept = default;
+
+	/** Destructor */
 	~StaticCreation() = default;
+
+	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(StaticCreation);
 
 };	// class StaticCreation

@@ -13,7 +13,7 @@
 namespace sl
 {
 
-/** メモリーリークチェック関数 */
+/** メモリリークチェック関数 */
 void CheckMemoryLeak();
 
 /** 
