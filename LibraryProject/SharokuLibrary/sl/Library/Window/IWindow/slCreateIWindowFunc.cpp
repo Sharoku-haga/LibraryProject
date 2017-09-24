@@ -2,7 +2,7 @@
 //!< @file		slCreateIWindowFunc.cpp
 //!< @brief		ウィンドウを生成する関数の実装
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/05	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/05	更新履歴：2017/09/23
 //==================================================================================================================================//
 
 /* Includes --------------------------------------------------------------------------------------------------- */
@@ -21,24 +21,24 @@ namespace sl
 
 #ifdef DIRECT_X_11
 
-UniquePtr<IWindow> CreateMainWindow(t_char* pWinName, int winWidth, int winHeight)
+UniquePtr<IWindow> CreateMainWindow(const WindowCreationData& rData)
 {
 	HICON	    hIcon = LoadIcon(NULL, IDI_APPLICATION);
-	return CreateDXWindow(pWinName, winWidth, winHeight, hIcon, NULL);
+	return CreateDXWindow(rData, hIcon, NULL);
 }
 
-UniquePtr<IWindow> CreateMainWindow(t_char* pWinName, int winWidth, int winHeight, unsigned short iconID)
+UniquePtr<IWindow> CreateMainWindow(const WindowCreationData& rData, unsigned short iconID)
 {
 	HICON	    hIcon = LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(iconID));
-	return CreateDXWindow(pWinName, winWidth, winHeight, hIcon, NULL);
+	return CreateDXWindow(rData, hIcon, NULL);
 }
 
-UniquePtr<IWindow> CreateSubWindow(t_char* pWinName, int winWidth, int winHeight, const WindowHandle& rMainWinHandle)
+UniquePtr<IWindow> CreateSubWindow(const WindowCreationData& rData, const WindowHandle& rMainWinHandle)
 {
 	HICON	    hIcon = LoadIcon(NULL, IDI_APPLICATION);
 	HWND parentHandle  = static_cast<HWND>(rMainWinHandle.m_pAdress);
 
-	return CreateDXWindow(pWinName, winWidth, winHeight, hIcon, parentHandle);
+	return CreateDXWindow(rData, hIcon, parentHandle);
 }	
 
 #endif // DIRECT_X_11

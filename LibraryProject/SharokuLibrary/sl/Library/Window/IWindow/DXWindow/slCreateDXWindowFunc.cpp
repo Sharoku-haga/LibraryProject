@@ -2,7 +2,7 @@
 //!< @file		slCreateDXWindowFunc.cpp
 //!< @brief		DXWinodwクラスを生成する関数の実装
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/06	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/06	更新履歴：2017/09/23
 //==================================================================================================================================//
 
 /* Includes --------------------------------------------------------------------------------------------------- */
@@ -76,7 +76,7 @@ void AjustClientSize(HWND hWnd, int widthSize, int heightSize)
 
 /* Function --------------------------------------------------------------------------------------------------- */
 
-UniquePtr<DXWindow> CreateDXWindow(t_char* pWinName, int winWidth, int winHeight, HICON  hIcon, HWND hWndParent)
+UniquePtr<DXWindow> CreateDXWindow(const WindowCreationData& rData, HICON  hIcon, HWND hWndParent)
 {
 	// ウィンドウ情報の設定
 	WNDCLASSEX  WndClass;
@@ -90,19 +90,19 @@ UniquePtr<DXWindow> CreateDXWindow(t_char* pWinName, int winWidth, int winHeight
 	WndClass.hCursor			= LoadCursor(NULL, IDC_ARROW);
 	WndClass.hbrBackground		= (HBRUSH)GetStockObject(BLACK_BRUSH);
 	WndClass.lpszMenuName		= NULL;
-	WndClass.lpszClassName		= pWinName;
+	WndClass.lpszClassName		= rData.m_pTitle;
 	WndClass.hIconSm			= hIcon;
 	RegisterClassEx(&WndClass);
 
 	// ウィンドウ作成
 	HWND hWnd = CreateWindow(
-		pWinName,
-		pWinName,
+		rData.m_pTitle,
+		rData.m_pTitle,
 		WS_OVERLAPPEDWINDOW,
 		0,
 		0,
-		winWidth,
-		winHeight,
+		rData.m_Width,
+		rData.m_Height,
 		hWndParent,
 		NULL,
 		GetModuleHandle(NULL),
@@ -118,13 +118,13 @@ UniquePtr<DXWindow> CreateDXWindow(t_char* pWinName, int winWidth, int winHeight
 
 #ifdef ADJUST_CLIENT_SIZE
 
-	AjustClientSize(hWnd, winWidth, winHeight);
+	AjustClientSize(hWnd, rData.m_Width, rData.m_Height);
 
 #endif	// ADJUST_CLIENT_SIZE
 
 	ShowWindow(hWnd, SW_SHOW);
 	UpdateWindow(hWnd);
-	SetWindowText(hWnd, pWinName);
+	SetWindowText(hWnd, rData.m_pTitle);
 
 	return MakeUniquePtr<DXWindow>(hWnd);
 }

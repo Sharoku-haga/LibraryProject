@@ -2,14 +2,34 @@
 //!< @file		slWindowDeclaration.h
 //!< @brief		Window関連の宣言などをまとめたヘッダファイル
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/05	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/05	更新履歴：2017/09/23
 //==================================================================================================================================//
 
 #ifndef SL_WINDOW_DECLARATION_H
 #define SL_WINDOW_DECLARATION_H
 
+#include "../Utility/slTypes.h"
+
 namespace sl
 {
+
+//===================================================================================//
+//!< ウィンドウ作成時に設定するデータ構造体
+//===================================================================================//
+struct WindowCreationData
+{
+	t_char*		m_pTitle;			//!< ウィンドウのタイトル
+	int			m_Width;			//!< ウィンドウの横の長さ
+	int			m_Height;			//!< ウィンドウの縦の長さ
+
+	WindowCreationData() {}
+	WindowCreationData(t_char* pTitle, int width, int height)
+		: m_pTitle(pTitle)
+		, m_Width(width)
+		, m_Height(height)
+	{}
+
+};	// struct WindowCreationData
 
 //===================================================================================//
 //!< ウィンドウのハンドルのアドレスを格納するデータ構造体 
