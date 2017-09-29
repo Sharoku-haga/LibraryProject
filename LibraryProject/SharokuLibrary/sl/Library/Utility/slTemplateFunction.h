@@ -75,7 +75,7 @@ inline void SafeReleaseDX(Ty*& dxPointer)
 	if(dxPointer != nullptr)
 	{
 		dxPointer->Release();
-		dxPointer = nullptr
+		dxPointer = nullptr;
 	}
 }
 

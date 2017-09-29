@@ -23,6 +23,7 @@
     <ClInclude Include="sl\Library\Debugger\slDebugDefine.h" />
     <ClInclude Include="sl\Library\Debugger\slDebugFunction.h" />
     <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
     <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slDefaultLifeTime.h" />
@@ -55,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Debugger\slDebugFunction.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.cpp" />
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp" />
