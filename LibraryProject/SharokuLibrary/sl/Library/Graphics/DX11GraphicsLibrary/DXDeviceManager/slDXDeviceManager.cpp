@@ -17,10 +17,12 @@ namespace sl
 
 DXDeviceManager::DXDeviceManager()
 	: m_pDevice(NULL)
+	, m_pDeviceContext(NULL)
 {}
 
 DXDeviceManager::~DXDeviceManager()
 {
+	sl::SafeReleaseDX(m_pDeviceContext);
 	sl::SafeReleaseDX(m_pDevice);
 }
 
@@ -42,7 +44,7 @@ bool DXDeviceManager::CreateDevice()
 		D3D11_SDK_VERSION,					// DirectX SDKのバージョン
 		&m_pDevice,							// 初期化されたデバイス
 		&adoptedFeatureLevel,				// 採用されたフィーチャーレベル
-		NULL);								// 初期化されたデバイスコンテキスト.ここでは作成しないためNULL
+		&m_pDeviceContext);					// 初期化されたデバイスコンテキスト
 
 	if(FAILED(hr))
 	{

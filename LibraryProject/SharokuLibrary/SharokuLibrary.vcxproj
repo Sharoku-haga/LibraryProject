@@ -24,6 +24,11 @@
     <ClInclude Include="sl\Library\Debugger\slDebugFunction.h" />
     <ClInclude Include="sl\Library\EntryPoint\slEntryPoint.h" />
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander\slDXDrawingCommander.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager\slDXGISwapChainManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slBlendStateManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slRasterizerStateManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
     <ClInclude Include="sl\Library\Singleton\LifeTimePolicy\slDefaultLifeTime.h" />
@@ -57,6 +62,11 @@
   <ItemGroup>
     <ClCompile Include="sl\Library\Debugger\slDebugFunction.cpp" />
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander\slDXDrawingCommander.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager\slDXGISwapChainManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slBlendStateManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slRasterizerStateManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.cpp" />
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp" />

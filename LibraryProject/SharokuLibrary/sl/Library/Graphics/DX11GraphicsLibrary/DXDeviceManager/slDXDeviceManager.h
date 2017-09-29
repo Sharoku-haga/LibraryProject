@@ -29,7 +29,7 @@ public:
 	~DXDeviceManager();
 
 	/**
-	* デバイスを生成する関数 
+	* デバイス関連を生成する関数 
 	* @return true→成功 false→失敗
 	*/
 	bool CreateDevice();
@@ -38,10 +38,17 @@ public:
 	* デバイスを取得する関数
 	* @return DirectX11のデバイス
 	*/
-	inline ID3D11Device*		GetDevice(void) const { return m_pDevice;  }
+	inline ID3D11Device*	GetDevice(void) const { return m_pDevice;  }
+
+	/**
+	* デバイスコンテキストを取得する関数
+	* @return DirectX11のデバイスコンテキスト
+	*/
+	inline ID3D11DeviceContext*	GetDeviceContext(void) const { return m_pDeviceContext;  }
 
 private:
 	ID3D11Device*					m_pDevice;					//!< Direct3Dのデバイス
+	ID3D11DeviceContext*			m_pDeviceContext;			//!< Direct3Dのデバイスコンテキスト
 
 	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(DXDeviceManager);
