@@ -3,7 +3,7 @@
 //!< @file		slIWindow.h
 //!< @brief		IWindowクラスへッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/09/04	更新履歴：2017/09/17
+//!< @data		作成日時：2017/09/04	更新履歴：2017/09/23
 //==================================================================================================================================//
 
 #ifndef SL_IWINDOW_H
@@ -41,6 +41,7 @@ public:
 	virtual WindowHandle GetWindowHandle() const = 0;
 
 private:
+	/** コピー禁止 */
 	SL_DISALLOW_COPY_AND_ASSIGN(IWindow);
 
 };	// interface IWindow
