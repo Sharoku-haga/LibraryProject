@@ -55,6 +55,15 @@
     <Filter Include="sl\Library\Debugger">
       <UniqueIdentifier>{85146789-b683-4c53-8dc9-0448a33e2b70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Graphics">
+      <UniqueIdentifier>{e8783060-03a4-43b8-b632-90b36a5ef0f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary">
+      <UniqueIdentifier>{0d78b3b8-ce65-4571-bff4-80e4eacd6a80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager">
+      <UniqueIdentifier>{344132f4-c580-4de3-8bff-6991926aae88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -156,6 +165,9 @@
     <ClInclude Include="sl\Library\Debugger\slDebugFunction.h">
       <Filter>sl\Library\Debugger</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
@@ -172,6 +184,9 @@
     </ClCompile>
     <ClCompile Include="sl\Library\Debugger\slDebugFunction.cpp">
       <Filter>sl\Library\Debugger</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
