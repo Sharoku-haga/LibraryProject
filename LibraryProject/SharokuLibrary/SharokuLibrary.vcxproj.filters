@@ -64,6 +64,18 @@
     <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager">
       <UniqueIdentifier>{344132f4-c580-4de3-8bff-6991926aae88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager">
+      <UniqueIdentifier>{8b491c53-9c7b-4f32-b46a-c04dc108d548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager">
+      <UniqueIdentifier>{022a21ad-4a00-4323-996b-6abf09885ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander">
+      <UniqueIdentifier>{f809b77b-9971-42d7-88e0-f897bdf67c27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState">
+      <UniqueIdentifier>{f825a4c5-d95f-4530-96a7-bd0e82cbf34f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -168,6 +180,21 @@
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.h">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager\slDXGISwapChainManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander\slDXDrawingCommander.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slBlendStateManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slRasterizerStateManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
@@ -187,6 +214,21 @@
     </ClCompile>
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager\slDXDeviceManager.cpp">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDeviceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager\slDXGISwapChainManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGISwapChainManager</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander\slDXDrawingCommander.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slBlendStateManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slRasterizerStateManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
