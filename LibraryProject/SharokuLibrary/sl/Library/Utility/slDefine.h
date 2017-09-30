@@ -23,6 +23,16 @@
 __VA_ARGS__(const __VA_ARGS__&) = delete;			\
 void operator=(const __VA_ARGS__&) = delete;
 
+/** ID(int型)をメンバにもつ構造体作成マクロ */
+#define SL_DECLARE_ID(name)							\
+struct name##__										\
+{													\
+	int m_ID;										\
+	name##__(){}									\
+	name##__(int id) : m_ID(id) {}					\
+};													\
+typedef struct name##__  name   
+
 
 #endif	// SL_DEFINE_H
 
