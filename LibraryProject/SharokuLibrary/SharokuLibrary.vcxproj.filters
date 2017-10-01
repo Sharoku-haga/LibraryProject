@@ -79,6 +79,21 @@
     <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXTexture">
       <UniqueIdentifier>{6ebe4536-9e15-402b-8dc8-dbacc2b9b2fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader">
+      <UniqueIdentifier>{de1db90e-23cc-4d10-8a2a-4aca742fad12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader">
+      <UniqueIdentifier>{ba74e1e4-72c9-4b84-aa4a-a9f8889309f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader">
+      <UniqueIdentifier>{e79dc49b-2d04-491e-b738-b6612207b2c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer">
+      <UniqueIdentifier>{e000944f-ec6e-414c-abd6-77b2da9fde56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout">
+      <UniqueIdentifier>{b59e4c47-22c9-44ef-a83b-d129f54d783c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -207,6 +222,21 @@
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXBlendStateManager.h">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader\slDXPixelShaderManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader\slDXVertexShaderManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout\slDXInputLayoutManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer\slDXConstantBufferManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\slDX11Graphics.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
@@ -247,6 +277,18 @@
     </ClCompile>
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXBlendStateManager.cpp">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader\slDXPixelShaderManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader\slDXVertexShaderManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout\slDXInputLayoutManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer\slDXConstantBufferManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

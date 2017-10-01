@@ -24,7 +24,7 @@ DXTextureManager::~DXTextureManager()
 	ReleaseALL();
 }
 
-const TextureID& DXTextureManager::LoadTexture(const t_char* pFileName)
+TextureID DXTextureManager::LoadTexture(const t_char* pFileName)
 {
 	D3DX11_IMAGE_LOAD_INFO loadImageInfo;							// テクスチャーを読み込む方法を制御するための情報
 	ZeroMemory(&loadImageInfo, sizeof(D3DX11_IMAGE_LOAD_INFO));
@@ -72,7 +72,7 @@ const TextureID& DXTextureManager::LoadTexture(const t_char* pFileName)
 
 void DXTextureManager::Release(const TextureID& rID)
 {
-	SafeReleaseDX(m_pTextureRV[rID.m_ID]);
+	SafeReleaseDX(m_pTextureRV[rID.m_Num]);
 }
 
 void DXTextureManager::ReleaseALL(void)
