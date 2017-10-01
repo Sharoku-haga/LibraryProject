@@ -76,6 +76,9 @@
     <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState">
       <UniqueIdentifier>{f825a4c5-d95f-4530-96a7-bd0e82cbf34f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXTexture">
+      <UniqueIdentifier>{6ebe4536-9e15-402b-8dc8-dbacc2b9b2fa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -189,10 +192,19 @@
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander\slDXDrawingCommander.h">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander</Filter>
     </ClInclude>
-    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slBlendStateManager.h">
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXTexture\slDXTextureManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\slGraphicsID.h">
+      <Filter>sl\Library\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXSamplerStateManager.h">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
     </ClInclude>
-    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slRasterizerStateManager.h">
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXRasterizerStateManager.h">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXBlendStateManager.h">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
     </ClInclude>
   </ItemGroup>
@@ -224,10 +236,16 @@
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander\slDXDrawingCommander.cpp">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXDrawingCommander</Filter>
     </ClCompile>
-    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slBlendStateManager.cpp">
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXTexture\slDXTextureManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXSamplerStateManager.cpp">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
     </ClCompile>
-    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slRasterizerStateManager.cpp">
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXRasterizerStateManager.cpp">
+      <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXBlendStateManager.cpp">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState</Filter>
     </ClCompile>
   </ItemGroup>
