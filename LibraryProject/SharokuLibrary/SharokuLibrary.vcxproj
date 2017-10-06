@@ -29,8 +29,13 @@
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXBlendStateManager.h" />
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXSamplerStateManager.h" />
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXRasterizerStateManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer\slDXConstantBufferManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout\slDXInputLayoutManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader\slDXPixelShaderManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader\slDXVertexShaderManager.h" />
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXTexture\slDXTextureManager.h" />
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.h" />
+    <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\slDX11Graphics.h" />
     <ClInclude Include="sl\Library\Graphics\slGraphicsID.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
@@ -70,6 +75,10 @@
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXBlendStateManager.cpp" />
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXSamplerStateManager.cpp" />
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXGraphicsState\slDXRasterizerStateManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer\slDXConstantBufferManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout\slDXInputLayoutManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXPixelShader\slDXPixelShaderManager.cpp" />
+    <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXVertexShader\slDXVertexShaderManager.cpp" />
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXTexture\slDXTextureManager.cpp" />
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.cpp" />
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />

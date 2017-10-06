@@ -27,9 +27,9 @@ void operator=(const __VA_ARGS__&) = delete;
 #define SL_DECLARE_ID(name)							\
 struct name##__										\
 {													\
-	int m_ID;										\
+	int m_Num;										\
 	name##__(){}									\
-	name##__(int id) : m_ID(id) {}					\
+	name##__(int idNum) : m_Num(idNum) {}			\
 };													\
 typedef struct name##__  name   
 

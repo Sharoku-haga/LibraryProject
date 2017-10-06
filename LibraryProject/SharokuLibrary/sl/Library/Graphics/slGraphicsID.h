@@ -2,7 +2,7 @@
 //!< @file		slGraphicsID.h
 //!< @brief		グラフィックスで使用されるID群ヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/01	更新履歴：
+//!< @data		作成日時：2017/10/01	更新履歴：2017/10/04
 //==================================================================================================================================//
 
 #ifndef SL_GRAPHICS_ID_H
@@ -15,6 +15,18 @@ namespace sl
 
 /** TextureIDの構造体 */
 SL_DECLARE_ID(TextureID);
+
+/** バーテックスシェーダーIDの構造体 */
+SL_DECLARE_ID(VertexShaderID);
+
+/** ピクセルシェーダーIDの構造体 */
+SL_DECLARE_ID(PixelShaderID);
+
+/** 頂点レイアウトIDの構造体 */
+SL_DECLARE_ID(InputLayoutID);
+
+/** コンスタントバッファーIDの構造体 */
+SL_DECLARE_ID(ConstantBufferID);
 
 }	// namespace sl
 

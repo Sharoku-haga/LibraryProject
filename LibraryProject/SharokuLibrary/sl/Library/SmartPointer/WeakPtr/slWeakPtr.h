@@ -93,9 +93,9 @@ public:
 
 };	// class WeakPtr
 
-#include "slWeakPtr_private.inl"
-
 }	// namespace sl
+
+#include "slWeakPtr_private.inl"
 
 #endif	// SL_WEAK_PTR_H
 

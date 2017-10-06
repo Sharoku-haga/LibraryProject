@@ -37,14 +37,14 @@ public:
 	* @param[in] pFileName テクスチャーのファイル名
 	* @return 登録したID
 	*/
-	const TextureID& LoadTexture(const t_char* pFileName);
+	TextureID LoadTexture(const t_char* pFileName);
 
 	/**
 	* 指定したテクスチャーへのポインタを取得する関数
 	* @param[in] rID	テクスチャーのID
 	* @return 指定したテクスチャーへのポインタ
 	*/
-	ID3D11ShaderResourceView* GetTextureRV(const TextureID& rID) { return m_pTextureRV[rID.m_ID]; }
+	ID3D11ShaderResourceView* GetTextureRV(const TextureID& rID) { return m_pTextureRV[rID.m_Num]; }
 
 	/** 
 	* 指定したテクスチャーを解放する関数 
