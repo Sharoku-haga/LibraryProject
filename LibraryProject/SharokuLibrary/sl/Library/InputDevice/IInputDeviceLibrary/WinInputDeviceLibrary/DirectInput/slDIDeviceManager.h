@@ -2,7 +2,7 @@
 //!< @file		slDIDeviceManager.h
 //!< @brief		sl::DIDeviceManagerクラスのへッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/06	更新履歴：
+//!< @data		作成日時：2017/10/06	更新履歴：2017/10/08
 //==================================================================================================================================//
 
 #ifndef SL_DI_DEVICE_MANAGER_H
@@ -37,18 +37,32 @@ public:
 
 	/** 
 	* ダイレクトインプットのキーデバイスを生成する関数 
-	* @return キーデバイス	生成失敗した場合はNULLが返ってくる
+	* @return true→成功 false→失敗
 	*/
-	LPDIRECTINPUTDEVICE8	CreateDIKeyDevice();
+	bool CreateDIKeyDevice();
 
 	/**
 	* ダイレクトインプットのマウスデバイスを生成する関数
-	* @return マウスデバイス 生成失敗した場合はNULLが返ってくる
+	* @return true→成功 false→失敗
 	*/
-	LPDIRECTINPUTDEVICE8	CreateDIMouseDevice();
+	bool CreateDIMouseDevice();
+
+	/**
+	* Getter
+	* @return キーデバイス
+	*/
+	LPDIRECTINPUTDEVICE8 GetKeyDevice() { return m_pKeyDevice; }
+
+	/**
+	* Getter 
+	* @return マウスデバイス
+	*/
+	LPDIRECTINPUTDEVICE8 GetMouseDevice() { return m_pMouseDevice; }
 
 private:
 	LPDIRECTINPUT8					m_pDInput8;					//!< DirectInputデバイス
+	LPDIRECTINPUTDEVICE8			m_pKeyDevice;				//!< DirectInputのキーデバイス
+	LPDIRECTINPUTDEVICE8			m_pMouseDevice;				//!< DirectInputのマウスデバイス
 	WindowHandle					m_Handle;					//!< ウィンドウハンドル
 
 };	// class DIDeviceManager
