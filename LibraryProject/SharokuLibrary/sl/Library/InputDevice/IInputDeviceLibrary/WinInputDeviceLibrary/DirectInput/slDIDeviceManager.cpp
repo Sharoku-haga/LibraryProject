@@ -2,7 +2,7 @@
 //!< @file		slDIDeviceManager.cpp
 //!< @brief		sl::DIDeviceManagerクラスの実装
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/06	更新履歴：
+//!< @data		作成日時：2017/10/06	更新履歴：2017/10/08
 //==================================================================================================================================//
 
 /* Includes --------------------------------------------------------------------------------------------------- */
@@ -19,10 +19,14 @@ namespace sl
 
 DIDeviceManager::DIDeviceManager()
 	: m_pDInput8(NULL)
+	, m_pKeyDevice(NULL)
+	, m_pMouseDevice(NULL)
 {}
 
 DIDeviceManager::~DIDeviceManager()
 {
+	SafeReleaseDX(m_pMouseDevice);
+	SafeReleaseDX(m_pKeyDevice);
 	SafeReleaseDX(m_pDInput8);
 }
 
@@ -43,56 +47,53 @@ bool DIDeviceManager::Initialize(const WindowHandle& rHandle)
 	return true;
 }
 
-LPDIRECTINPUTDEVICE8	DIDeviceManager::CreateDIKeyDevice()
+bool DIDeviceManager::CreateDIKeyDevice()
 {
-	LPDIRECTINPUTDEVICE8 pKeyDevice = NULL;
-
 	//	キーボードの初期化
 	if(FAILED(m_pDInput8->CreateDevice(GUID_SysKeyboard
-										, &pKeyDevice
+										, &m_pKeyDevice
 										, NULL)))
 	{
 		slOutputDebugString("DirectInputキーボード初期化に失敗しました");
-		return pKeyDevice;
+		return false;
 	}
 
 	//	データフォーマット
-	if(FAILED(pKeyDevice->SetDataFormat(&c_dfDIKeyboard)))
+	if(FAILED(m_pKeyDevice->SetDataFormat(&c_dfDIKeyboard)))
 	{
 		slOutputDebugString("キーボードデバイスのデータフォーマットに失敗しました。");
-		SafeReleaseDX(pKeyDevice);
-		return pKeyDevice;
+		SafeReleaseDX(m_pKeyDevice);
+		return false;
 	}
 
 	//	協調レベル
-	if(FAILED(pKeyDevice->SetCooperativeLevel(static_cast<HWND>(m_Handle.m_pAdress)
+	if(FAILED(m_pKeyDevice->SetCooperativeLevel(static_cast<HWND>(m_Handle.m_pAdress)
 											, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
 	{
 		slOutputDebugString("キーボードデバイスの協調レベル設定に失敗しました。");
-		SafeReleaseDX(pKeyDevice);
-		return pKeyDevice;
+		SafeReleaseDX(m_pKeyDevice);
+		return false;
 	}
 
 	// アクセス許可
-	pKeyDevice->Acquire();
-	return pKeyDevice;
+	m_pKeyDevice->Acquire();
+	return true;
 }
 
-LPDIRECTINPUTDEVICE8	DIDeviceManager::CreateDIMouseDevice()
+bool DIDeviceManager::CreateDIMouseDevice()
 {
-	LPDIRECTINPUTDEVICE8 pMouseDevice = NULL;
 	if (FAILED(m_pDInput8->CreateDevice(GUID_SysMouse
-										, &pMouseDevice, NULL)))
+										, &m_pMouseDevice, NULL)))
 	{
 		slOutputDebugString("DirectInputマウスの初期化に失敗しました。");
-		return pMouseDevice;
+		return false;
 	}
 
-	if(FAILED(pMouseDevice->SetDataFormat(&c_dfDIMouse2)))
+	if(FAILED(m_pMouseDevice->SetDataFormat(&c_dfDIMouse2)))
 	{
 		slOutputDebugString("マウスデバイスのデータフォーマットに失敗しました。");
-		SafeReleaseDX(pMouseDevice);
-		return pMouseDevice;
+		SafeReleaseDX(m_pMouseDevice);
+		return false;
 	}
 
 	// 軸モードを設定（相対値モードに設定）
@@ -103,26 +104,26 @@ LPDIRECTINPUTDEVICE8	DIDeviceManager::CreateDIMouseDevice()
 	diprop.diph.dwHow			= DIPH_DEVICE;						// dwObj メンバの解釈方法を指定する値
 	diprop.dwData				= 1000;								// 設定または取得されるプロパティ値
 	//	diprop.dwData		= DIPROPAXISMODE_ABS;	// 絶対値モードの場合
-	if (FAILED(pMouseDevice->SetProperty(DIPROP_BUFFERSIZE, &diprop.diph)))
+	if (FAILED(m_pMouseDevice->SetProperty(DIPROP_BUFFERSIZE, &diprop.diph)))
 	{
-		slOutputDebugString("軸モードの設定に失敗");
-		SafeReleaseDX(pMouseDevice);
-		return pMouseDevice;
+		slOutputDebugString("マウスデバイスの軸モードの設定に失敗");
+		SafeReleaseDX(m_pMouseDevice);
+		return false;
 	}
 
 	//	協調レベル
-	if (FAILED(pMouseDevice->SetCooperativeLevel(static_cast<HWND>(m_Handle.m_pAdress)
+	if (FAILED(m_pMouseDevice->SetCooperativeLevel(static_cast<HWND>(m_Handle.m_pAdress)
 												, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
 	{
-		slOutputDebugString("協調レベルの設定に失敗しました。");
-		SafeReleaseDX(pMouseDevice);
-		return pMouseDevice;
+		slOutputDebugString("マウスデバイスの協調レベルの設定に失敗しました。");
+		SafeReleaseDX(m_pMouseDevice);
+		return false;
 	}
 
 	// アクセス許可
-	pMouseDevice->Acquire();
+	m_pMouseDevice->Acquire();
 
-	return pMouseDevice;
+	return true;
 }
 
 }	// namespace sl
