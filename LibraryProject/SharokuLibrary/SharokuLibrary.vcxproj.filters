@@ -94,6 +94,21 @@
     <Filter Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXInputLayout">
       <UniqueIdentifier>{b59e4c47-22c9-44ef-a83b-d129f54d783c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\InputDevice">
+      <UniqueIdentifier>{4fcbfaca-9041-4b70-9e22-9fedf05966fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\InputDevice\IInputDeviceLibrary">
+      <UniqueIdentifier>{a65a2173-4a82-4e9b-a37c-a1f987604a52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary">
+      <UniqueIdentifier>{33e3578b-3c37-411a-80df-b490535381f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput">
+      <UniqueIdentifier>{10477056-7f97-47a9-851e-ae1f97e0e08c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput">
+      <UniqueIdentifier>{ab471c94-068f-41be-b757-014892b6bf8d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -237,6 +252,27 @@
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\slDX11Graphics.h">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\slIInputDeviceLibrary.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\slWinInputDeviceLibrary.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIDeviceManager.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIKeyboard.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIMouse.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\slInputDeviceDeclaration.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput\slXInputDevice.h">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
@@ -289,6 +325,24 @@
     </ClCompile>
     <ClCompile Include="sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer\slDXConstantBufferManager.cpp">
       <Filter>sl\Library\Graphics\DX11GraphicsLibrary\DXShader\DXConstantBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\slWinInputDeviceLibrary.cpp">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIDeviceManager.cpp">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIKeyboard.cpp">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIMouse.cpp">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\slIInputDeviceLibrary.cpp">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput\slXInputDevice.cpp">
+      <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
