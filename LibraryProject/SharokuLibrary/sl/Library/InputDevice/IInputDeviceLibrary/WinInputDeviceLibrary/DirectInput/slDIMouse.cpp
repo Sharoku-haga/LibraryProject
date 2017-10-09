@@ -78,8 +78,7 @@ void DIMouse::UpdateButtonState()
 	{
 		if(m_DIMouseState.rgbButtons[i])
 		{
-			if(m_OldBTNState[i] == OFF
-				|| m_OldBTNState[i] ==RELEASE)
+			if(m_OldBTNState[i] == OFF)
 			{
 				m_CurrentBTNState[i] = PUSH;
 			}
@@ -92,8 +91,7 @@ void DIMouse::UpdateButtonState()
 		}
 		else
 		{
-			if(m_OldBTNState[i] == ON
-				|| m_OldBTNState[i] == PUSH)
+			if(m_OldBTNState[i] == ON)
 			{
 				m_CurrentBTNState[i] = RELEASE;
 			}
