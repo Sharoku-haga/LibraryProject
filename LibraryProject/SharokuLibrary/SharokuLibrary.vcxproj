@@ -60,6 +60,7 @@
     <ClInclude Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr.h" />
     <ClInclude Include="sl\Library\Utility\slCompressedPair.h" />
     <ClInclude Include="sl\Library\Utility\slDefine.h" />
+    <ClInclude Include="sl\Library\Utility\slPoint.h" />
     <ClInclude Include="sl\Library\Utility\slRect.h" />
     <ClInclude Include="sl\Library\Utility\slTemplateFunction.h" />
     <ClInclude Include="sl\Library\Utility\slTypes.h" />

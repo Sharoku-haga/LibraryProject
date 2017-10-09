@@ -51,8 +51,8 @@ private:
 	static constexpr int	m_KeyTypeCount = 256;				//!< キーの種類の数 
 	LPDIRECTINPUTDEVICE8	m_pDIKeyDevice;						//!< ダイレクトインプットのキーデバイス
 	std::vector<KEY_TYPE>	m_UsingKey;							//!< 使用するキーの種類を格納するvector					
-	INPUT_DEVICE_STATE		m_CurrentKeyState[m_KeyTypeCount];	//!< 現在のキーの状態を格納する変数
-	INPUT_DEVICE_STATE		m_OldKeyState[m_KeyTypeCount];		//!< 前のキーの状態を格納する変数
+	INPUT_DEVICE_STATE		m_CurrentKeyState[m_KeyTypeCount];	//!< 現在のキーの状態を格納する配列
+	INPUT_DEVICE_STATE		m_OldKeyState[m_KeyTypeCount];		//!< 前のキーの状態を格納する配列
 	unsigned char			m_DIKeys[m_KeyTypeCount];			//!< デバイスからのキー状態を格納する配列
 
 	/** 

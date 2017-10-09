@@ -32,7 +32,7 @@ DIDeviceManager::~DIDeviceManager()
 
 bool DIDeviceManager::Initialize(const WindowHandle& rHandle)
 {
-	m_Handle = rHandle;
+	m_WinHandle = rHandle;
 
 	//	DirectInput オブジェクトの生成
 	if (FAILED(DirectInput8Create(GetModuleHandle(NULL),
@@ -67,7 +67,7 @@ bool DIDeviceManager::CreateDIKeyDevice()
 	}
 
 	//	協調レベル
-	if(FAILED(m_pKeyDevice->SetCooperativeLevel(static_cast<HWND>(m_Handle.m_pAdress)
+	if(FAILED(m_pKeyDevice->SetCooperativeLevel(static_cast<HWND>(m_WinHandle.m_pAdress)
 											, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
 	{
 		slOutputDebugString("キーボードデバイスの協調レベル設定に失敗しました。");
@@ -112,7 +112,7 @@ bool DIDeviceManager::CreateDIMouseDevice()
 	}
 
 	//	協調レベル
-	if (FAILED(m_pMouseDevice->SetCooperativeLevel(static_cast<HWND>(m_Handle.m_pAdress)
+	if (FAILED(m_pMouseDevice->SetCooperativeLevel(static_cast<HWND>(m_WinHandle.m_pAdress)
 												, DISCL_NONEXCLUSIVE | DISCL_FOREGROUND)))
 	{
 		slOutputDebugString("マウスデバイスの協調レベルの設定に失敗しました。");
