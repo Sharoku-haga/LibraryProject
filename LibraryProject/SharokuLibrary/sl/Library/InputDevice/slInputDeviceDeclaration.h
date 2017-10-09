@@ -179,6 +179,23 @@ enum KEY_TYPE
 	K_MEDIASELECT     = 0xED,    
 };	// enum KEY_TYPE
 
+/** マウスのボタンの種類 */
+enum MOUSE_BTN_TYPE
+{
+	MOUSE_LEFT,		//!< 左ボタン
+	MOUSE_RIGHT,	//!< 右ボタン
+	MOUSE_CENTER,	//!< 真ん中ボタン
+	MOUSE_BTN_MAX,
+};	// enum MOUSE_BTN_TYPE
+
+/** マウスホイールの状態 */
+enum MOUSE_WHEEL_STATE
+{
+	WHEEL_NONE	= 0,		//!< 回転していない
+	WHEEL_UP	= 1,		//!< 奥に回転
+	WHEEL_DOWN	= -1,		//!< 手前に回転
+};	// enum MOUSE_WHEEL_STATE
+
 
 /** XBOXコントローラーのボタンアクションの列挙 */
 enum XIGAMEPAD_ACTION_TYPE

@@ -273,6 +273,9 @@
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput\slXInputDevice.h">
       <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Utility\slPoint.h">
+      <Filter>sl\Library\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">

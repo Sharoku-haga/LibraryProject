@@ -59,11 +59,17 @@ public:
 	*/
 	LPDIRECTINPUTDEVICE8 GetMouseDevice() { return m_pMouseDevice; }
 
+	/**
+	* Getter
+	* @return 結びついているウィンドウハンドル
+	*/
+	WindowHandle&	GetWinHandle() { return m_WinHandle; }
+
 private:
 	LPDIRECTINPUT8					m_pDInput8;					//!< DirectInputデバイス
 	LPDIRECTINPUTDEVICE8			m_pKeyDevice;				//!< DirectInputのキーデバイス
 	LPDIRECTINPUTDEVICE8			m_pMouseDevice;				//!< DirectInputのマウスデバイス
-	WindowHandle					m_Handle;					//!< ウィンドウハンドル
+	WindowHandle					m_WinHandle;					//!< ウィンドウハンドル
 
 };	// class DIDeviceManager
 
