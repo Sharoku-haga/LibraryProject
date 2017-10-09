@@ -2,7 +2,7 @@
 //!< @file		slInputDeviceDeclaration.h
 //!< @brief		インプットデバイス関連の宣言などをまとめたへッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/06	更新履歴：
+//!< @data		作成日時：2017/10/06	更新履歴：2017/10/09
 //==================================================================================================================================//
 
 #ifndef SL_INPUT_DEVICE_DECLARATION_H
@@ -10,6 +10,10 @@
 
 namespace sl
 {
+
+//===================================================================================//
+//!< InputDeviceLibrary共通
+//===================================================================================//
 
 /** インプットデバイスタイプの列挙 */
 enum INPUT_DEVICE_TYPE
@@ -29,6 +33,10 @@ enum INPUT_DEVICE_STATE
 	RELEASE,		//!< 離れる状態
 	NONE,			//!< 何も設定しない状態。初期化で使用
 };	// enum INPUT_DEVICE_STATE
+
+//===================================================================================//
+//!< キーデバイス関連
+//===================================================================================//
 
 /** キーの種類の列挙 */
 enum KEY_TYPE
@@ -179,6 +187,10 @@ enum KEY_TYPE
 	K_MEDIASELECT     = 0xED,    
 };	// enum KEY_TYPE
 
+//===================================================================================//
+//!< マウスデバイス関連 
+//===================================================================================//
+
 /** マウスのボタンの種類 */
 enum MOUSE_BTN_TYPE
 {
@@ -196,37 +208,40 @@ enum MOUSE_WHEEL_STATE
 	WHEEL_DOWN	= -1,		//!< 手前に回転
 };	// enum MOUSE_WHEEL_STATE
 
+//===================================================================================//
+//!< XBOXコントローラー関連
+//===================================================================================//
 
 /** XBOXコントローラーのボタンアクションの列挙 */
-enum XIGAMEPAD_ACTION_TYPE
+enum XIDEVICE_ACTION_TYPE
 {
-	XIGAMEPAD_DPAD_UP          ,		//<! 十字キーの上
-	XIGAMEPAD_DPAD_DOWN        ,		//<! 十字キーの下
-	XIGAMEPAD_DPAD_LEFT        ,		//<! 十字キーの左
-	XIGAMEPAD_DPAD_RIGHT       ,		//<! 十字キーの右
-	XIGAMEPAD_START            ,		//<! スタートボタン
-	XIGAMEPAD_BACK             ,		//<! バックボタン
-	XIGAMEPAD_LEFT_THUMB       ,		//<! 左スティックのボタン
-	XIGAMEPAD_RIGHT_THUMB      ,		//<! 右スティックのボタン
-	XIGAMEPAD_LEFT_SHOULDER    ,		//<! LBボタン
-	XIGAMEPAD_RIGHT_SHOULDER   ,		//<! RBボタン
-	XIGAMEPAD_A                ,		//<! Aボタン
-	XIGAMEPAD_B                ,		//<! Bボタン
-	XIGAMEPAD_X                ,		//<! Xボタン
-	XIGAMEPAD_Y                ,		//<! Yボタン
-	XIGAMEPAD_BTN_MAX		   ,		//<! ボタンの総数 /** @attention ここのIDは仕様しないこと ---------------- */
-	XIGAMEPAD_LTRIGGER		   ,		//<! 左のトリガー
-	XIGAMEPAD_RTRIGGER		   ,		//<! 右のトリガー
-	XIGAMEPAD_LSTICK_UP		   ,		//<! 左スティックの上判定
-	XIGAMEPAD_LSTICK_DOWN	   ,		//<! 左スティックの下判定
-	XIGAMEPAD_LSTICK_RIGHT	   ,		//<! 左スティックの右判定
-	XIGAMEPAD_LSTICK_LEFT	   ,		//<! 左スティックの左判定
-	XIGAMEPAD_RSTICK_UP		   ,		//<! 右スティックの上判定
-	XIGAMEPAD_RSTICK_DOWN	   ,		//<! 右スティックの下判定
-	XIGAMEPAD_RSTICK_RIGHT	   ,		//<! 右スティックの右判定
-	XIGAMEPAD_RSTICK_LEFT	   ,		//<! 右スティックの左判定
-	XIGAMEPAD_ID_MAX		   ,		//<! IDの数
-};	// enum XIGAMEPAD_ACTION_TYPE
+	XIDEVICE_DPAD_UP           ,		//<! 十字キーの上
+	XIDEVICE_DPAD_DOWN         ,		//<! 十字キーの下
+	XIDEVICE_DPAD_LEFT         ,		//<! 十字キーの左
+	XIDEVICE_DPAD_RIGHT        ,		//<! 十字キーの右
+	XIDEVICE_START             ,		//<! スタートボタン
+	XIDEVICE_BACK              ,		//<! バックボタン
+	XIDEVICE_LEFT_THUMB        ,		//<! 左スティックのボタン
+	XIDEVICE_RIGHT_THUMB       ,		//<! 右スティックのボタン
+	XIDEVICE_LEFT_SHOULDER     ,		//<! LBボタン
+	XIDEVICE_RIGHT_SHOULDER    ,		//<! RBボタン
+	XIDEVICE_A                 ,		//<! Aボタン
+	XIDEVICE_B                 ,		//<! Bボタン
+	XIDEVICE_X                 ,		//<! Xボタン
+	XIDEVICE_Y                 ,		//<! Yボタン
+	XIDEVICE_BTN_MAX		   ,		//<! ボタンの総数 /** @attention ここのIDは仕様しないこと ---------------- */
+	XIDEVICE_LTRIGGER		   ,		//<! 左のトリガー
+	XIDEVICE_RTRIGGER		   ,		//<! 右のトリガー
+	XIDEVICE_LSTICK_UP		   ,		//<! 左スティックの上判定
+	XIDEVICE_LSTICK_DOWN	   ,		//<! 左スティックの下判定
+	XIDEVICE_LSTICK_RIGHT	   ,		//<! 左スティックの右判定
+	XIDEVICE_LSTICK_LEFT	   ,		//<! 左スティックの左判定
+	XIDEVICE_RSTICK_UP		   ,		//<! 右スティックの上判定
+	XIDEVICE_RSTICK_DOWN	   ,		//<! 右スティックの下判定
+	XIDEVICE_RSTICK_RIGHT	   ,		//<! 右スティックの右判定
+	XIDEVICE_RSTICK_LEFT	   ,		//<! 右スティックの左判定
+	XIDEVICE_ID_MAX		   ,		//<! IDの数
+};	// enum XIDEVICE_ACTION_TYPE
 
 }	// namespace sl
 
