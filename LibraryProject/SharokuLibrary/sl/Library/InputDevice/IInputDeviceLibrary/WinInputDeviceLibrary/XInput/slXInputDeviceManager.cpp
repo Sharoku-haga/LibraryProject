@@ -31,11 +31,11 @@ XInputDeviceManager::XInputDeviceManager()
 	AddDevice();
 }
 
-void XInputDeviceManager::AddDevice()
+bool XInputDeviceManager::AddDevice()
 {
 	if(m_Devices.size() == m_DeviceCountMaxVal)
 	{
-		return;
+		return false;
 	}
 
 	// デバイス追加
@@ -50,9 +50,11 @@ void XInputDeviceManager::AddDevice()
 
 	m_CurrentDeviceState.push_back(states);
 	m_OldDeviceState.push_back(states);
+
+	return true;
 }
 
-void XInputDeviceManager::UpdateDeviceState()
+void XInputDeviceManager::UpdateState()
 {
 	for(unsigned int i = 0; i < m_Devices.size(); ++i)
 	{

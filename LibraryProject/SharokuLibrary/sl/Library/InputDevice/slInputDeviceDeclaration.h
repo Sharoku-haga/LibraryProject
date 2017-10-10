@@ -20,7 +20,7 @@ enum INPUT_DEVICE_TYPE
 {
 	KEYBOARD,			//!< キーボード
 	MOUSE,				//!< マウス
-	XBOX_CONTROLLER,	//!<  XBOXのコントローラー
+	XINPUT_DEVICE,		//!< XInputデバイス
 };	// enum INPUT_DEVICE_TYPE
 
 

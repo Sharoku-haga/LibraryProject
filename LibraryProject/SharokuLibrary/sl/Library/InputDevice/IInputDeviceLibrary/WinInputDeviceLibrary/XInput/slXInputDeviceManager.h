@@ -11,6 +11,7 @@
 #include <windows.h>
 #include <XInput.h>
 #include <vector>
+#include "../../slIInputDevice.h"
 #include "../../../slInputDeviceDeclaration.h"
 
 namespace sl
@@ -19,7 +20,7 @@ namespace sl
 //===================================================================================//
 //!< XIpuntDevice(XBOXコントローラー)を管理するクラス
 //===================================================================================//
-class XInputDeviceManager
+class XInputDeviceManager : public IInputDevice
 {
 
 public:
@@ -32,11 +33,12 @@ public:
 	/** 
 	* デバイス(コントローラー)の数を追加する関数 
 	* 最大数(4)を超える場合は追加されない
+	* @return true→追加成功 false→追加失敗(すでに最大数の場合)
 	*/
-	void AddDevice();
+	bool AddDevice();
 
 	/** 状態を更新する関数 */
-	void UpdateDeviceState();
+	virtual void UpdateState()override;
 
 	/**
 	* Getter

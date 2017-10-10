@@ -11,6 +11,7 @@
 #define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h>	
 #include <d3dx10.h>
+#include "../../slIInputDevice.h"
 #include "../../../../Utility/slPoint.h"
 #include "../../../../Window/slWindowDeclaration.h"
 #include "../../../slInputDeviceDeclaration.h"
@@ -21,7 +22,7 @@ namespace sl
 //===================================================================================//
 //!< DirectInoutのマウスクラス
 //===================================================================================//
-class DIMouse
+class DIMouse : public IInputDevice
 {
 
 public:
@@ -35,8 +36,8 @@ public:
 	/** Destructor */
 	~DIMouse() = default;
 
-	/** マウスの状態を更新する関数 */
-	void UpdateState();
+	/** デバイスの状態を更新する関数 */
+	virtual void UpdateState()override;
 
 	/**
 	* Getter

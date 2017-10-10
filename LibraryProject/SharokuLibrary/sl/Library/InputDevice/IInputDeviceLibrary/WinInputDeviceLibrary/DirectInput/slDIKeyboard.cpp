@@ -42,7 +42,7 @@ void DIKeyboard::RegisterUsingKey(KEY_TYPE key)
 	m_UsingKey.push_back(key);
 }
 
-void DIKeyboard::UpdateKeyState()
+void DIKeyboard::UpdateState()
 {
 	// デバイスからキーの状態を取得する
 	HRESULT hr = m_pDIKeyDevice->Acquire();
