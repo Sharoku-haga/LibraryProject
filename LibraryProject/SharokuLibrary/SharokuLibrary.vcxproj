@@ -37,6 +37,7 @@
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\DXViewManager\slDXViewManager.h" />
     <ClInclude Include="sl\Library\Graphics\DX11GraphicsLibrary\slDX11Graphics.h" />
     <ClInclude Include="sl\Library\Graphics\slGraphicsID.h" />
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\slIInputDevice.h" />
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\slIInputDeviceLibrary.h" />
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIDeviceManager.h" />
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIKeyboard.h" />

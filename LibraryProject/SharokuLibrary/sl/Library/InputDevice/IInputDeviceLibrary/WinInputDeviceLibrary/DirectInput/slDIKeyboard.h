@@ -11,6 +11,7 @@
 #define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h>	
 #include <vector>
+#include "../../slIInputDevice.h"
 #include "../../../slInputDeviceDeclaration.h"
 
 namespace sl
@@ -19,7 +20,7 @@ namespace sl
 //===================================================================================//
 //!< DirectInputのキーボードクラス
 //===================================================================================//
-class DIKeyboard
+class DIKeyboard : public IInputDevice
 {
 
 public:
@@ -38,8 +39,8 @@ public:
 	*/
 	void RegisterUsingKey(KEY_TYPE key);
 
-	/** キーの状態を更新する関数 */
-	void UpdateKeyState();
+	/** デバイスの状態を更新する関数 */
+	virtual void UpdateState()override;
 
 	/**
 	* 指定したキーの現在の状態を取得する関数 

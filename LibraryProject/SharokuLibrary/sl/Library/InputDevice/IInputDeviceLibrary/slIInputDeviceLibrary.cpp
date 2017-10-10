@@ -8,10 +8,20 @@
 /* Includes --------------------------------------------------------------------------------------------------- */
 
 #include "slIInputDeviceLibrary.h"
+#include "WinInputDeviceLibrary/slWinInputDeviceLibrary.h"
+
+namespace sl
+{
 
 /* Public Functions ------------------------------------------------------------------------------------------- */
 
+IInputDeviceLibrary& IInputDeviceLibrary::Instance()
+{
+	static WinInputDeviceLibrary instance;
+	return instance;
+}
 
+}	// namespace sl
 
 //==================================================================================================================================//
 // END OF FILE
