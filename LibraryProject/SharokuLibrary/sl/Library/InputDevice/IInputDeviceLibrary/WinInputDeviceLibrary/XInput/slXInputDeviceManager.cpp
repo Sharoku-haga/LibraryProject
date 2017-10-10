@@ -2,7 +2,7 @@
 //!< @file		slXInputDeviceManager.cpp
 //!< @brief		sl::XInputDeviceManagerクラスの実装
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/07	更新履歴：2017/10/09
+//!< @data		作成日時：2017/10/07	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 /* Includes --------------------------------------------------------------------------------------------------- */
@@ -78,14 +78,20 @@ void XInputDeviceManager::UpdateState()
 	}
 }
 
-INPUT_DEVICE_STATE XInputDeviceManager::GetDeviceState(XIDEVICE_ACTION_TYPE actionTypeID, unsigned int deviceNum) 
-{  
+bool XInputDeviceManager::CheckActionState(XIDEVICE_ACTION_TYPE actionType, INPUT_DEVICE_STATE checkState, unsigned int deviceNum)
+{
 	if(RESULT_FALSE(m_Devices[deviceNum].m_IsConnected)
 		|| deviceNum > m_Devices.size())
 	{
-		return NONE;
+		return false;
 	}
-	return m_CurrentDeviceState[deviceNum][actionTypeID]; 
+
+	if(m_CurrentDeviceState[deviceNum][actionType] == checkState)
+	{
+		return true;
+	}
+
+	return false;
 }
 
 /* Private Functions ------------------------------------------------------------------------------------------ */

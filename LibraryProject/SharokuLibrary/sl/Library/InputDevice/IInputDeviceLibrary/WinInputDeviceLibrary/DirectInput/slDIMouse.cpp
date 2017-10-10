@@ -2,7 +2,7 @@
 //!< @file		slDIMouse.cpp		
 //!< @brief		sl::DIMouseクラスの実装
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/07	更新履歴：2017/10/09
+//!< @data		作成日時：2017/10/07	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 /* Includes --------------------------------------------------------------------------------------------------- */
@@ -42,6 +42,24 @@ void DIMouse::UpdateState()
 
 	// ホイールの状態を更新
 	UpdateWheelState();
+}
+
+bool DIMouse::CheckButtonState(MOUSE_BTN_TYPE btnType, INPUT_DEVICE_STATE checkState)
+{
+	if(m_CurrentBTNState[btnType] == checkState)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool DIMouse::CheckWheelState(MOUSE_WHEEL_STATE checkState)
+{
+	if(m_WheelState == checkState)
+	{
+		return true;
+	}
+	return false;
 }
 
 void DIMouse::SetMouseCursorPos(const int_Point& rPos)

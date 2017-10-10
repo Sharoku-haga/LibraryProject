@@ -2,7 +2,7 @@
 //!< @file		slDIKeyboard.h
 //!< @brief		sl::DIKeyboardクラスのヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/07	更新履歴：2017/10/08
+//!< @data		作成日時：2017/10/07	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 #ifndef SL_DI_KEYBOARD_H
@@ -34,19 +34,29 @@ public:
 	~DIKeyboard() = default;
 
 	/**
-	* 使用するキーの種類を登録する関数
-	* @param[in] key  キーのタイプ
+	* 使用するキーを登録する関数
+	* この関数で登録したキーはUpdateStateで状態を更新する
+	* @param[in] keyType  キーのタイプ
 	*/
-	void RegisterUsingKey(KEY_TYPE key);
+	void RegisterUsingKey(KEY_TYPE keyType);
 
 	/** デバイスの状態を更新する関数 */
 	virtual void UpdateState()override;
 
 	/**
-	* 指定したキーの現在の状態を取得する関数 
-	* @param[in] key  キーのタイプ
+	* 指定したキーが指定した状態かどうかを確認する関数 
+	* @param[in] keyType		状態を確認したいキーのタイプ
+	* @param[in] checkState		指定した状態
+	* @return ture→指定した状態である false→指定した状態でない
 	*/
-	inline INPUT_DEVICE_STATE GetCurrentKeyState(KEY_TYPE key) { return m_CurrentKeyState[key];  }
+	bool CheckKeyState(KEY_TYPE keyType, INPUT_DEVICE_STATE checkState);
+
+	/**
+	* 引数のキーを使用キーとして登録したか調べる関数
+	* @param[in] keyType		登録を確認したいキーのタイプ
+	* @return ture→登録している false→登録していない
+	*/
+	bool IsRegisteredUsingKey(KEY_TYPE keyType);
 
 private:
 	static constexpr int	m_KeyTypeCount = 256;				//!< キーの種類の数 
