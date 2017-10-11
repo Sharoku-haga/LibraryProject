@@ -43,7 +43,9 @@
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIKeyboard.h" />
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIMouse.h" />
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\slWinInputDeviceLibrary.h" />
+    <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\WinCustomizeInput\slWinCustomizeInputManager.h" />
     <ClInclude Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput\slXInputDeviceManager.h" />
+    <ClInclude Include="sl\Library\InputDevice\slInputDevice.h" />
     <ClInclude Include="sl\Library\InputDevice\slInputDeviceDeclaration.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slStaticCreation.h" />
     <ClInclude Include="sl\Library\Singleton\CreationPolicy\slUsingNewCreation.h" />
@@ -95,6 +97,7 @@
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIKeyboard.cpp" />
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\DirectInput\slDIMouse.cpp" />
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\slWinInputDeviceLibrary.cpp" />
+    <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\WinCustomizeInput\slWinCustomizeInputManager.cpp" />
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput\slXInputDeviceManager.cpp" />
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp" />

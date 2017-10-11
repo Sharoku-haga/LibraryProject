@@ -2,7 +2,7 @@
 //!< @file		slXInputDeviceManager.h
 //!< @brief		sl::XInputDeviceManagerクラスのヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/07	更新履歴：2017/10/09
+//!< @data		作成日時：2017/10/07	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 #ifndef SL_XINPUT_DEVICE_MANAGER_H
@@ -47,11 +47,13 @@ public:
 	unsigned int GetDeviceCount() { return m_Devices.size(); }
 
 	/**
-	* Getter
-	* @param[in] actionTypeID	状態を取得したいアクションID
+	* 指定したアクションが指定した状態かどうかを確認する関数 
+	* @param[in] actionType		状態を確認したいアクション
+	* @param[in] checkState		指定した状態
 	* @param[in] deviceNum		デバイス番号.0～3を指定できる(デフォルトは0)
+	* @return ture→指定した状態である false→指定した状態でない
 	*/
-	INPUT_DEVICE_STATE GetDeviceState(XIDEVICE_ACTION_TYPE actionTypeID, unsigned int deviceNum = 0);
+	bool CheckActionState(XIDEVICE_ACTION_TYPE actionType, INPUT_DEVICE_STATE checkState, unsigned int deviceNum = 0);
 
 private:
 	/** デバイスの状態を格納する構造体 */

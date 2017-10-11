@@ -2,7 +2,7 @@
 //!< @file		slDIMouse.h		
 //!< @brief		sl::DIMouseクラスのヘッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/07	更新履歴：2017/10/09
+//!< @data		作成日時：2017/10/07	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 #ifndef SL_DI_MOUSE_H
@@ -46,17 +46,19 @@ public:
 	const long_Point&	GetMouseCursorPos() { return m_MouseCursorPos; }
 
 	/**
-	* Getter
-	* @param[in] btn	状態を取得したいマウスボタン
-	* @return 指定したマウスボタンの状態
+	* 指定したボタンが指定した状態かどうかを確認する関数 
+	* @param[in] btnType		状態を確認したいマウスボタンのタイプ
+	* @param[in] checkState		指定した状態
+	* @return ture→指定した状態である false→指定した状態でない
 	*/
-	INPUT_DEVICE_STATE GetButtonState(MOUSE_BTN_TYPE btn) { return m_CurrentBTNState[btn]; }
+	bool CheckButtonState(MOUSE_BTN_TYPE btnType, INPUT_DEVICE_STATE checkState);
 
 	/**
-	* Getter
-	* @return ホイールの状態
+	* ホイールが指定した状態かどうかを確認する関数 
+	* @param[in] checkState		指定した状態
+	* @return ture→指定した状態である false→指定した状態でない
 	*/
-	MOUSE_WHEEL_STATE GetWheelState() { return m_WheelState; }
+	bool CheckWheelState(MOUSE_WHEEL_STATE checkState);
 
 	/**
 	* Setter

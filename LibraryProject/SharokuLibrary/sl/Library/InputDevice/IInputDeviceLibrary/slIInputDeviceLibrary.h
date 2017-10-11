@@ -2,7 +2,7 @@
 //!< @file		slIInputDeviceLibrary.h
 //!< @brief		sl::IInputDeviceLibraryインターフェイスのへッダ
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/06	更新履歴：2017/10/10
+//!< @data		作成日時：2017/10/06	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 #ifndef SL_IINPUT_DEVICE_LIBRARY_H
@@ -62,13 +62,13 @@ public:
 	*/
 	virtual void RegisterUsingKey(KEY_TYPE key) = 0;
 
-	/** 
-	* 指定したキーの状態を確認する関数
-	* @param[in] 状態を確認したいキーのID
-	* @return 指定したキーの状態
-	* @attention キーデバイスを作成していない場合はassertで止まる
+	/**
+	* 指定したキーが指定した状態かどうかを確認する関数 
+	* @param[in] key			状態を確認したいキー
+	* @param[in] checkState		指定した状態
+	* @return ture→指定した状態である false→指定した状態でない
 	*/
-	virtual INPUT_DEVICE_STATE CheckKeyState(KEY_TYPE key) = 0;
+	virtual bool CheckKeyState(KEY_TYPE key, INPUT_DEVICE_STATE checkState) = 0;
 
 	//-----------------------------------------------------------------//
 	// マウスデバイス関連関数
@@ -82,19 +82,21 @@ public:
 	virtual void ShowMouseCursor(bool isVisible) = 0;
 
 	/**
-	* 指定したマウスのボタンの状態を確認する関数
-	* @param[in] 状態を確認したいマウスボタンのID
-	* @return 指定したマウスボタンの状態
+	* 指定したマウスのボタンが指定した状態かどうかを確認する関数 
+	* @param[in] button			状態を確認したいマウスボタン
+	* @param[in] checkState		指定した状態
+	* @return ture→指定した状態である false→指定した状態でない
 	* @attention マウスデバイスを作成していない場合はassertで止まる
 	*/
-	virtual INPUT_DEVICE_STATE CheckMouseButtonState(MOUSE_BTN_TYPE button) = 0;
+	virtual bool CheckMouseButtonState(MOUSE_BTN_TYPE button, INPUT_DEVICE_STATE checkState) = 0;
 
-	/** 
-	* マウスのホイールの状態を取得する関数 
-	* @return マウスホイールの状態
+	/**
+	* マウスホイールが指定した状態かどうかを確認する関数 
+	* @param[in] checkState		指定した状態
+	* @return ture→指定した状態である false→指定した状態でない
 	* @attention マウスデバイスを作成していない場合はassertで止まる
 	*/
-	virtual MOUSE_WHEEL_STATE CheckMouseWheelState() = 0;
+	virtual bool CheckMouseWheelState(MOUSE_WHEEL_STATE checkState) = 0;
 
 	/**
 	* マウスカーソルの座標を取得する関数
@@ -126,12 +128,55 @@ public:
 	virtual int GetXInputDeviceCount() = 0;
 
 	/**
-	* 指定したXBOXコントローラーのボタンなどの状態を確認する関数
-	* @param[in] actionType 状態を取得したいXBOXコントローラーのID
-	* @return 指定したXBOXコントローラーのボタンなどの状態
-	* @attention XIputデバイスを作成していない場合はassertで止まる
+	* 指定したXInputアクション(XBOXコントローラーのボタンなど)が指定した状態かどうかを確認する関数 
+	* @param[in] actionType		状態を確認したいXInputアクション
+	* @param[in] checkState		指定した状態
+	* @param[in] deviceNum		XInputデバイス番号.0～3を指定できる(デフォルトは0)
+	* @return ture→指定した状態である false→指定した状態でない
+	* @attention XInputデバイスを作成していない場合はassertで止まる
 	*/
-	virtual INPUT_DEVICE_STATE CheckXInputAction(XIDEVICE_ACTION_TYPE actionType) = 0;
+	virtual bool CheckXInputActionState(XIDEVICE_ACTION_TYPE actionType, INPUT_DEVICE_STATE checkState
+								, unsigned int deviceNum = 0) = 0;
+
+	//-----------------------------------------------------------------//
+	//	インプットデバイスカスタマイズ関連関数
+	//	ここでいうカスタマイズとはキーなどのInputデバイスのボタンなどに
+	//	クライアント側で自由にIDを設定して使えるようにすること
+	//-----------------------------------------------------------------//
+
+	/** 
+	* キーのカスタマイズ登録関数
+	* @param[in] id			登録したいID
+	* @param[in] key		登録したいキー
+	* @attention キーデバイスを作成していない場合はassertで止まる
+	*/
+	virtual void RegisterCustomizeKey(int id, KEY_TYPE key) = 0;
+
+	/** 
+	* マウスボタンのカスタマイズ登録関数
+	* @param[in] id			登録したいID
+	* @param[in] mouseBtn	登録したいマウスのボタン
+	* @attention マウスデバイスを作成していない場合はassertで止まる
+	*/
+	virtual void RegisterCustomizeMouseButton(int id, MOUSE_BTN_TYPE mouseBtn) = 0;
+
+	/**
+	* XInpntのアクションのカスタマイズ登録関数
+	* @param[in] id				登録したいID
+	* @param[in] actionType		登録したいアクションタイプ
+	* @attention XInputデバイスを作成していない場合はassertで止まる
+	*/
+	virtual void RegisterCustomizeXInputAction(int id, XIDEVICE_ACTION_TYPE actionType) = 0;
+
+	/** 
+	* カスタマイズしたインプットデバイスが指定した状態かどうか確認する関数
+	* @param[in] id				登録したID
+	* @param[in] checkState		チェックしたい状態
+	* @param[in] deviceNum		デバイス番号.0～3まで対応. デフォルトは0.
+	* @return	その状態かどうか true→指定した状態である false →指定した状態でない
+	*/
+	virtual bool CheckCustomizeInputState(int id, INPUT_DEVICE_STATE checkState
+										, int deviceNum = 0) = 0;
 
 protected:
 	/** Constructor */

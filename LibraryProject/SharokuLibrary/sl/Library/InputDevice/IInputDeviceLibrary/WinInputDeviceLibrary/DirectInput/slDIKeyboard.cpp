@@ -2,7 +2,7 @@
 //!< @file		slDIKeyboard.cpp
 //!< @brief		sl::DIKeyboardクラスの実装
 //!< @author	T.Haga
-//!< @data		作成日時：2017/10/07	更新履歴：2017/10/08
+//!< @data		作成日時：2017/10/07	更新履歴：2017/10/11
 //==================================================================================================================================//
 
 /* Includes --------------------------------------------------------------------------------------------------- */
@@ -26,20 +26,16 @@ DIKeyboard::DIKeyboard(LPDIRECTINPUTDEVICE8 pKeyDevice)
 	} 
 }
 
-void DIKeyboard::RegisterUsingKey(KEY_TYPE key)
+void DIKeyboard::RegisterUsingKey(KEY_TYPE keyType)
 {
-	if(m_UsingKey.size() != 0)
+	// 引数のキーがすでに登録されているか確認する
+	// 登録されているなら即return
+	if(IsRegisteredUsingKey(keyType))
 	{
-		// 引数のキーがすでに登録されているか確認し、
-		// 登録されているなら即returnする
-		auto result = std::find(m_UsingKey.begin(), m_UsingKey.end(), key);
-		if(result != m_UsingKey.end())
-		{
-			return;
-		}
+		return;
 	}
 
-	m_UsingKey.push_back(key);
+	m_UsingKey.push_back(keyType);
 }
 
 void DIKeyboard::UpdateState()
@@ -56,6 +52,28 @@ void DIKeyboard::UpdateState()
 	{
 		UpdateKeyState(key);
 	}
+}
+
+bool DIKeyboard::CheckKeyState(KEY_TYPE keyType, INPUT_DEVICE_STATE checkState)
+{
+	if(m_CurrentKeyState[keyType] == checkState)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool DIKeyboard::IsRegisteredUsingKey(KEY_TYPE keyType)
+{
+	if(m_UsingKey.size() != 0)
+	{
+		auto result = std::find(m_UsingKey.begin(), m_UsingKey.end(), keyType);
+		if(result != m_UsingKey.end())
+		{
+			return true;
+		}
+	}
+	return false;
 }
 
 /* Private Functions ------------------------------------------------------------------------------------------ */

@@ -9,10 +9,11 @@
 
 #include "../../../Utility/slTemplateFunction.h"
 #include "../../../Debugger/slDebugDefine.h"
+#include "XInput/slXInputDeviceManager.h"
 #include "DirectInput/slDIDeviceManager.h"
 #include "DirectInput/slDIKeyboard.h"
 #include "DirectInput/slDIMouse.h"
-#include "XInput/slXInputDeviceManager.h"
+#include "WinCustomizeInput/slWinCustomizeInputManager.h"
 #include "slWinInputDeviceLibrary.h"
 
 namespace sl
@@ -26,6 +27,7 @@ WinInputDeviceLibrary::WinInputDeviceLibrary()
 	, m_pKeyboard(nullptr)
 	, m_pMouse(nullptr)
 	, m_pXInputDeviceManager(nullptr)
+	, m_pCustomizeInputManager(nullptr)
 {}
 
 WinInputDeviceLibrary::~WinInputDeviceLibrary()
@@ -34,10 +36,12 @@ WinInputDeviceLibrary::~WinInputDeviceLibrary()
 	SafeDelete(m_pMouse);
 	SafeDelete(m_pKeyboard);
 	SafeDelete(m_pDeviceManager);
+	SafeDelete(m_pCustomizeInputManager);
 }
 
 bool WinInputDeviceLibrary::Initialize(const WindowHandle& rHandle)
 {
+	m_pCustomizeInputManager = new WinCustomizeInputManager();
 	m_pDeviceManager = new DIDeviceManager();
 	return m_pDeviceManager->Initialize(rHandle);
 }
@@ -52,6 +56,7 @@ bool WinInputDeviceLibrary::CreateInputDevice(INPUT_DEVICE_TYPE deviceType)
 			m_pDeviceManager->CreateDIKeyDevice();
 			m_pKeyboard = new DIKeyboard(m_pDeviceManager->GetKeyDevice());
 			m_pIInputDevice.push_back(m_pKeyboard);
+			m_pCustomizeInputManager->SetDIKeyboard(m_pKeyboard);
 			return true;
 		}
 		break;
@@ -63,6 +68,7 @@ bool WinInputDeviceLibrary::CreateInputDevice(INPUT_DEVICE_TYPE deviceType)
 			m_pMouse = new DIMouse(m_pDeviceManager->GetMouseDevice()
 									, m_pDeviceManager->GetMouseDevice());
 			m_pIInputDevice.push_back(m_pMouse);
+			m_pCustomizeInputManager->SetDIMouse(m_pMouse);
 			return true;
 		}
 		break;
@@ -72,6 +78,7 @@ bool WinInputDeviceLibrary::CreateInputDevice(INPUT_DEVICE_TYPE deviceType)
 		{
 			m_pXInputDeviceManager = new XInputDeviceManager();
 			m_pIInputDevice.push_back(m_pXInputDeviceManager);
+			m_pCustomizeInputManager->SetXInputDeviceManager(m_pXInputDeviceManager);
 			return true;
 		}
 		break;
@@ -98,10 +105,10 @@ void WinInputDeviceLibrary::RegisterUsingKey(KEY_TYPE key)
 	m_pKeyboard->RegisterUsingKey(key);
 }
 
-INPUT_DEVICE_STATE WinInputDeviceLibrary::CheckKeyState(KEY_TYPE key)
+bool WinInputDeviceLibrary::CheckKeyState(KEY_TYPE key, INPUT_DEVICE_STATE checkState)
 {
 	slAssertCheckExpression(m_pKeyboard != nullptr);
-	return m_pKeyboard->GetCurrentKeyState(key);
+	return m_pKeyboard->CheckKeyState(key, checkState);
 }
 
 void WinInputDeviceLibrary::ShowMouseCursor(bool isVisible)
@@ -110,16 +117,16 @@ void WinInputDeviceLibrary::ShowMouseCursor(bool isVisible)
 	m_pMouse->ShowMouseCursor(isVisible);
 }
 
-INPUT_DEVICE_STATE WinInputDeviceLibrary::CheckMouseButtonState(MOUSE_BTN_TYPE button)
+bool WinInputDeviceLibrary::CheckMouseButtonState(MOUSE_BTN_TYPE button, INPUT_DEVICE_STATE checkState)
 {
 	slAssertCheckExpression(m_pMouse != nullptr);
-	return m_pMouse->GetButtonState(button);
+	return m_pMouse->CheckButtonState(button, checkState);
 }
 
-MOUSE_WHEEL_STATE WinInputDeviceLibrary::CheckMouseWheelState()
+bool WinInputDeviceLibrary::CheckMouseWheelState(MOUSE_WHEEL_STATE checkState)
 {
 	slAssertCheckExpression(m_pMouse != nullptr);
-	return m_pMouse->GetWheelState();
+	return m_pMouse->CheckWheelState(checkState);
 }
 
 const long_Point&	WinInputDeviceLibrary::GetMouseCursorPos()
@@ -146,10 +153,32 @@ int WinInputDeviceLibrary::GetXInputDeviceCount()
 	return m_pXInputDeviceManager->GetDeviceCount();
 }
 
-INPUT_DEVICE_STATE WinInputDeviceLibrary::CheckXInputAction(XIDEVICE_ACTION_TYPE actionType)
+bool WinInputDeviceLibrary::CheckXInputActionState(XIDEVICE_ACTION_TYPE actionType, INPUT_DEVICE_STATE checkState
+							, unsigned int deviceNum)
 {
 	slAssertCheckExpression(m_pXInputDeviceManager != nullptr);
-	return m_pXInputDeviceManager->GetDeviceState(actionType);
+	return m_pXInputDeviceManager->CheckActionState(actionType, checkState, deviceNum);
+}
+
+void WinInputDeviceLibrary::RegisterCustomizeKey(int id, KEY_TYPE key)
+{
+	m_pCustomizeInputManager->RegisterCustomizeKey(id, key);
+}
+
+void WinInputDeviceLibrary::RegisterCustomizeMouseButton(int id, MOUSE_BTN_TYPE mouseBtn)
+{
+	m_pCustomizeInputManager->RegisterCustomizeMouseButton(id, mouseBtn);
+}
+
+void WinInputDeviceLibrary::RegisterCustomizeXInputAction(int id, XIDEVICE_ACTION_TYPE actionType)
+{
+	m_pCustomizeInputManager->RegisterCustomizeXInputAction(id, actionType);
+}
+
+bool WinInputDeviceLibrary::CheckCustomizeInputState(int id, INPUT_DEVICE_STATE checkState
+										, int deviceNum)
+{
+	return m_pCustomizeInputManager->CheckCustomizeInputState(id, checkState, deviceNum);
 }
 
 }	// namespace sl
