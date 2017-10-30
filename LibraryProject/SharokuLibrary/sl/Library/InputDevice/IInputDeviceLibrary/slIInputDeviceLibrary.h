@@ -32,7 +32,7 @@ public:
 	* 実体を取得する関数 
 	* @return インプットデバイスライブラリこのクラスを継承したクラス
 	*/
-	IInputDeviceLibrary& Instance();
+	static IInputDeviceLibrary& Instance();
 
 	/**
 	* 初期化関数
