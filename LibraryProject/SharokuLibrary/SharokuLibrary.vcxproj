@@ -61,6 +61,15 @@
     <ClInclude Include="sl\Library\SmartPointer\slSmartPointer.h" />
     <ClInclude Include="sl\Library\SmartPointer\UniquePtr\slUniquePtr.h" />
     <ClInclude Include="sl\Library\SmartPointer\WeakPtr\slWeakPtr.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\slISoundLibrary.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData\slDirectSoundData.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\slISoundData.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice\slDirectSoundDevice.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\slISoundDevice.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\slSoundLibrary.h" />
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage\slSoundDataStorage.h" />
+    <ClInclude Include="sl\Library\Sound\slSound.h" />
+    <ClInclude Include="sl\Library\Sound\slSoundDeclaration..h" />
     <ClInclude Include="sl\Library\Utility\slCompressedPair.h" />
     <ClInclude Include="sl\Library\Utility\slDefine.h" />
     <ClInclude Include="sl\Library\Utility\slPoint.h" />
@@ -100,6 +109,11 @@
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\WinCustomizeInput\slWinCustomizeInputManager.cpp" />
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\XInput\slXInputDeviceManager.cpp" />
     <ClCompile Include="sl\Library\SmartPointer\PtrSharedInfo\PtrSharedInfoBase.cpp" />
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\slISoundLibrary.cpp" />
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData\slDirectSoundData.cpp" />
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice\slDirectSoundDevice.cpp" />
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\slSoundLibrary.cpp" />
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage\slSoundDataStorage.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slCreateDXWindowFunc.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp" />
     <ClCompile Include="sl\Library\Window\IWindow\slCreateIWindowFunc.cpp" />

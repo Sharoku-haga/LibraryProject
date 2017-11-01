@@ -112,6 +112,30 @@
     <Filter Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\WinCustomizeInput">
       <UniqueIdentifier>{e2144cf0-2348-4760-8f39-b7a2002c3fb2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sl\Library\Sound">
+      <UniqueIdentifier>{88d78301-fcb8-4679-b9e0-b1bbc6f04e56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary">
+      <UniqueIdentifier>{dc192d9a-ec50-4c74-bf2e-cb1c7fe2499b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary\SoundLibrary">
+      <UniqueIdentifier>{66d16c0e-f439-44f2-962f-e47c47fc3b55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData">
+      <UniqueIdentifier>{fb668b04-5a86-454a-8dff-28e30448a83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData">
+      <UniqueIdentifier>{e35352e3-219c-4f95-b01c-91426338fdfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage">
+      <UniqueIdentifier>{116e2fd9-f1f0-4e7f-b454-d107d884fc40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice">
+      <UniqueIdentifier>{42c47def-182c-4728-a492-53de986c7ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice">
+      <UniqueIdentifier>{d59205f4-dbde-445a-ad2d-ad6e0cc747fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sl\sl.h">
@@ -288,6 +312,33 @@
     <ClInclude Include="sl\Library\InputDevice\slInputDevice.h">
       <Filter>sl\Library\InputDevice</Filter>
     </ClInclude>
+    <ClInclude Include="sl\Library\Sound\slSound.h">
+      <Filter>sl\Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\slISoundLibrary.h">
+      <Filter>sl\Library\Sound\ISoundLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\slSoundLibrary.h">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage\slSoundDataStorage.h">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\slSoundDeclaration..h">
+      <Filter>sl\Library\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\slISoundDevice.h">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice\slDirectSoundDevice.h">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\slISoundData.h">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData\slDirectSoundData.h">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sl\Library\Window\IWindow\DXWindow\slDXWindow.cpp">
@@ -361,6 +412,21 @@
     </ClCompile>
     <ClCompile Include="sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\WinCustomizeInput\slWinCustomizeInputManager.cpp">
       <Filter>sl\Library\InputDevice\IInputDeviceLibrary\WinInputDeviceLibrary\WinCustomizeInput</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\slSoundLibrary.cpp">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage\slSoundDataStorage.cpp">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\SoundDataStorage</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice\slDirectSoundDevice.cpp">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundDevice\DirectSoundDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData\slDirectSoundData.cpp">
+      <Filter>sl\Library\Sound\ISoundLibrary\SoundLibrary\ISoundData\DirectSoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="sl\Library\Sound\ISoundLibrary\slISoundLibrary.cpp">
+      <Filter>sl\Library\Sound\ISoundLibrary</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
